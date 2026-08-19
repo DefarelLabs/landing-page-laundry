@@ -1,59 +1,162 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Permana Laundry — Landing Page
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Landing page untuk bisnis **Permana Laundry**, dibangun dengan Laravel (Blade), Tailwind CSS, dan Alpine.js. Fitur utama: kalkulator estimasi harga cucian secara real-time.
 
-## About Laravel
+## Tech Stack
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Backend & Templating:** Laravel 12 (Blade Templates)
+- **Styling:** Tailwind CSS (via Vite)
+- **Interaktivitas:** Alpine.js (kalkulator harga reaktif)
+- **Database:** MySQL (via XAMPP)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Persyaratan
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Pastikan sudah terpasang di komputermu:
 
-## Learning Laravel
+- [XAMPP](https://www.apachefriends.org/) (PHP ^8.2 + MySQL)
+- [Composer](https://getcomposer.org/)
+- [Node.js](https://nodejs.org/) (v18 ke atas) + npm
+- Git
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+Cek semuanya sudah terpasang:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+```bash
+php -v
+composer -v
+node -v
+npm -v
+```
 
-## Laravel Sponsors
+> **Catatan:** ekstensi `zip` di `php.ini` (`C:\xampp\php\php.ini`) harus aktif (`extension=zip` tanpa tanda `;` di depan) agar Composer bisa install dependency.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## Instalasi dari Awal
 
-### Premium Partners
+### 1. Clone repository
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+```bash
+cd C:\xampp\htdocs
+git clone <URL_REPO_INI> landing-page-laundry
+cd landing-page-laundry
+```
 
-## Contributing
+### 2. Install dependency PHP
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+composer install
+```
 
-## Code of Conduct
+### 3. Install dependency JavaScript & Tailwind
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+npm install
+```
 
-## Security Vulnerabilities
+### 4. Setup file environment
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Copy `.env.example` menjadi `.env`:
 
-## License
+```bash
+copy .env.example .env
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Generate application key:
+
+```bash
+php artisan key:generate
+```
+
+### 5. Setup database
+
+1. Buka **XAMPP Control Panel**, start **Apache** dan **MySQL**.
+2. Buka `http://localhost/phpmyadmin`, buat database baru bernama `permana_laundry_landing`.
+3. Buka file `.env`, sesuaikan bagian database:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=permana_laundry_landing
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+4. Jalankan migrasi:
+
+```bash
+php artisan migrate
+```
+
+### 6. Jalankan project (butuh 2 terminal)
+
+**Terminal 1** — compile Tailwind CSS (biarkan tetap berjalan):
+
+```bash
+npm run dev
+```
+
+**Terminal 2** — jalankan server Laravel:
+
+```bash
+php artisan serve
+```
+
+Buka browser ke **http://127.0.0.1:8000**
+
+## Struktur Project (bagian yang relevan dengan landing page)
+
+```
+routes/web.php                              → Route utama landing page
+app/Http/Controllers/LandingController.php  → Data layanan & harga
+resources/views/layouts/app.blade.php       → Layout HTML dasar
+resources/views/landing/index.blade.php     → Isi landing page + kalkulator Alpine.js
+```
+
+## Mengubah Harga Layanan
+
+Harga dan daftar layanan (Cuci Reguler, Cuci Kilat, dll) belum diambil dari database — masih berupa array statis di:
+
+```
+app/Http/Controllers/LandingController.php
+```
+
+Edit array `$services` di method `index()` untuk menambah/mengubah layanan. Tampilan Services Section dan kalkulator harga akan otomatis ikut berubah.
+
+## Mengubah Kontak & Alamat
+
+Masih di file yang sama (`LandingController.php`), edit array `$contact`:
+
+- `whatsapp_number` — format internasional tanpa tanda `+` (contoh: `6281234567890`)
+- `email`
+- `address`
+- `operational` (jam operasional)
+
+## Build untuk Production
+
+Sebelum deploy ke server production:
+
+```bash
+npm run build
+composer install --optimize-autoloader --no-dev
+php artisan config:cache
+php artisan route:cache
+```
+
+Pastikan `.env` di server production diisi kredensial yang sesuai (jangan pernah commit `.env` ke Git).
+
+## Yang Tidak Boleh Di-commit ke Git
+
+File-file berikut sudah otomatis di-exclude lewat `.gitignore` bawaan Laravel — **jangan pernah** menghapusnya dari `.gitignore` atau memaksa `git add -f`:
+
+- `.env` — berisi kredensial database & application key
+- `/vendor` — dependency PHP (re-generate via `composer install`)
+- `/node_modules` — dependency JS (re-generate via `npm install`)
+- `/public/build` — hasil compile Tailwind/Vite (re-generate via `npm run build`)
+
+## Troubleshooting
+
+| Masalah | Solusi |
+|---|---|
+| `zip extension missing` saat `composer create-project` | Aktifkan `extension=zip` di `php.ini`, restart terminal |
+| Landing page tampil tanpa styling (polos) | Pastikan `npm run dev` sedang berjalan di terminal terpisah |
+| Error koneksi database saat `php artisan migrate` | Cek MySQL sudah **Start** di XAMPP Control Panel, dan kredensial `.env` sudah benar |
+| `.env` ke-push ke GitHub tanpa sengaja | Jalankan `git rm --cached .env`, commit, lalu **segera** ganti semua kredensial yang sempat ter-expose |
