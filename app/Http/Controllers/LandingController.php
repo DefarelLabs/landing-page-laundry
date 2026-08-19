@@ -42,6 +42,7 @@ class LandingController extends Controller
                 'unit'        => 'kg',
                 'eta'         => '± 24 jam',
             ],
+            
         ];
 
         $contact = [
