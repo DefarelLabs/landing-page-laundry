@@ -165,7 +165,7 @@
                             <input
                                 type="range"
                                 min="1"
-                                max="20"
+                                max="50"
                                 step="0.5"
                                 x-model.number="weight"
                                 class="flex-1 accent-sky-600"
@@ -246,7 +246,7 @@
                     <div class="overflow-hidden rounded-3xl border border-slate-200">
                         <iframe
                             title="Lokasi Permana Laundry"
-                            src="https://maps.google.com/maps?q=Kelapa%20Dua%2C%20Tangerang&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                            src="https://maps.google.com/maps?q=Permana%20Laundry%2C%20Tangerang&t=&z=14&ie=UTF8&iwloc=&output=embed"
                             class="h-full min-h-[320px] w-full"
                             loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"
