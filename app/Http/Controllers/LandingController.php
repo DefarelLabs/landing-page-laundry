@@ -25,31 +25,31 @@ class LandingController extends Controller
     {
         $services = [
             // --- Cuci Kiloan ---
-            ['key' => 'reguler',    'name' => 'Cuci Reguler',      'price' => 7000,   'unit' => 'kg',  'type' => 'kilo',   'duration_label' => '3 Hari',    'category' => 'Cuci Kiloan'],
-            ['key' => '2day',       'name' => 'Cuci 2 Day',        'price' => 8000,   'unit' => 'kg',  'type' => 'kilo',   'duration_label' => '2 Hari',    'category' => 'Cuci Kiloan'],
-            ['key' => 'express',    'name' => 'Cuci Express',      'price' => 10000,  'unit' => 'kg',  'type' => 'kilo',   'duration_label' => '1 Hari',    'category' => 'Cuci Kiloan'],
-            ['key' => 'kilat',      'name' => 'Cuci Kilat',        'price' => 12000,  'unit' => 'kg',  'type' => 'kilo',   'duration_label' => '6 Jam',     'category' => 'Cuci Kiloan'],
+            ['key' => 'reguler',    'name' => 'Cuci Reguler', 'description' => 'Cuci reguler dengan bahan deterjen berkualitas tinggi', 'price' => 7000,   'unit' => 'kg',  'type' => 'kilo',   'duration_label' => '3 Hari',    'category' => 'Cuci Kiloan'],
+            ['key' => '2day',       'name' => 'Cuci 2 Day', 'description' => 'Cuci 2 day dengan bahan deterjen berkualitas tinggi',        'price' => 8000,   'unit' => 'kg',  'type' => 'kilo',   'duration_label' => '2 Hari',    'category' => 'Cuci Kiloan'],
+            ['key' => 'express',    'name' => 'Cuci Express', 'description' => 'Cuci express dengan bahan deterjen berkualitas tinggi',      'price' => 10000,  'unit' => 'kg',  'type' => 'kilo',   'duration_label' => '1 Hari',    'category' => 'Cuci Kiloan'],
+            ['key' => 'kilat',      'name' => 'Cuci Kilat', 'description' => 'Cuci kilat dengan bahan deterjen berkualitas tinggi',        'price' => 12000,  'unit' => 'kg',  'type' => 'kilo',   'duration_label' => '6 Jam',     'category' => 'Cuci Kiloan'],
 
             // --- Setrika ---
-            ['key' => 'setrika',    'name' => 'Setrika Reguler',   'price' => 6000,   'unit' => 'kg',  'type' => 'kilo',   'duration_label' => '3 Hari',    'category' => 'Setrika'],
-            ['key' => 'setrika-e',  'name' => 'Setrika Express',   'price' => 8000,   'unit' => 'kg',  'type' => 'kilo',   'duration_label' => '1 Hari',    'category' => 'Setrika'],
-            ['key' => 'setrika-k',  'name' => 'Setrika Kilat',     'price' => 10000,  'unit' => 'kg',  'type' => 'kilo',   'duration_label' => '6 Jam',     'category' => 'Setrika'],
+            ['key' => 'setrika',    'name' => 'Setrika Reguler', 'description' => 'Setrika reguler dengan bahan deterjen berkualitas tinggi',      'price' => 6000,   'unit' => 'kg',  'type' => 'kilo',   'duration_label' => '3 Hari',    'category' => 'Setrika'],
+            ['key' => 'setrika-e',  'name' => 'Setrika Express', 'description' => 'Setrika express dengan bahan deterjen berkualitas tinggi',    'price' => 8000,   'unit' => 'kg',  'type' => 'kilo',   'duration_label' => '1 Hari',    'category' => 'Setrika'],
+            ['key' => 'setrika-k',  'name' => 'Setrika Kilat',   'description' => 'Setrika kilat dengan bahan deterjen berkualitas tinggi',      'price' => 10000,  'unit' => 'kg',  'type' => 'kilo',   'duration_label' => '6 Jam',     'category' => 'Setrika'],
 
             // --- Paket ---
-            ['key' => 'bulanan',    'name' => 'Paket Bulanan',     'price' => 250000, 'unit' => 'kg',  'type' => 'kilo',   'duration_label' => '3 Hari',    'category' => 'Paket'],
+            ['key' => 'bulanan',    'name' => 'Paket Bulanan', 'description' => 'Paket bulanan dengan bahan deterjen berkualitas tinggi',      'price' => 250000, 'unit' => 'kg',  'type' => 'kilo',   'duration_label' => '3 Hari',    'category' => 'Paket'],
 
             // --- Item Satuan ---
-            ['key' => 'satuan',     'name' => 'Cuci Satuan',       'price' => 10000,  'unit' => 'pcs', 'type' => 'satuan', 'duration_label' => '3 Hari',    'category' => 'Item Satuan'],
-            ['key' => 'jas',        'name' => 'Blazer / Jas',      'price' => 25000,  'unit' => 'pcs', 'type' => 'satuan', 'duration_label' => '3 Hari',    'category' => 'Item Satuan'],
-            ['key' => 'handuk',     'name' => 'Handuk Express',    'price' => 10000,  'unit' => 'pcs', 'type' => 'satuan', 'duration_label' => '1 Hari',    'category' => 'Item Satuan'],
-            ['key' => 'seprai',     'name' => 'Seprai Single',     'price' => 10000,  'unit' => 'pcs', 'type' => 'satuan', 'duration_label' => '3 Hari',    'category' => 'Item Satuan'],
-            ['key' => 'selimut',    'name' => 'Selimut Express',   'price' => 20000,  'unit' => 'pcs', 'type' => 'satuan', 'duration_label' => '1 Hari',    'category' => 'Item Satuan'],
+            ['key' => 'satuan',     'name' => 'Cuci Satuan', 'description' => 'Cuci satuan dengan bahan deterjen berkualitas tinggi',      'price' => 10000,  'unit' => 'pcs', 'type' => 'satuan', 'duration_label' => '3 Hari',    'category' => 'Item Satuan'],
+            ['key' => 'jas',        'name' => 'Blazer / Jas', 'description' => 'Blazer / Jas dengan bahan deterjen berkualitas tinggi',      'price' => 25000,  'unit' => 'pcs', 'type' => 'satuan', 'duration_label' => '3 Hari',    'category' => 'Item Satuan'],
+            ['key' => 'handuk',     'name' => 'Handuk Express', 'description' => 'Handuk express dengan bahan deterjen berkualitas tinggi',      'price' => 10000,  'unit' => 'pcs', 'type' => 'satuan', 'duration_label' => '1 Hari',    'category' => 'Item Satuan'],
+            ['key' => 'seprai',     'name' => 'Seprai Single', 'description' => 'Seprai single dengan bahan deterjen berkualitas tinggi',      'price' => 10000,  'unit' => 'pcs', 'type' => 'satuan', 'duration_label' => '3 Hari',    'category' => 'Item Satuan'],
+            ['key' => 'selimut',    'name' => 'Selimut Express', 'description' => 'Selimut express dengan bahan deterjen berkualitas tinggi',      'price' => 20000,  'unit' => 'pcs', 'type' => 'satuan', 'duration_label' => '1 Hari',    'category' => 'Item Satuan'],
 
             // --- Bedcover ---
-            ['key' => 'bedcover1',  'name' => 'Bedcover 1',        'price' => 40000,  'unit' => 'set', 'type' => 'satuan', 'duration_label' => '1 Minggu',  'category' => 'Bedcover'],
-            ['key' => 'bedcover2',  'name' => 'Bedcover 2',        'price' => 30000,  'unit' => 'set', 'type' => 'satuan', 'duration_label' => '1 Minggu',  'category' => 'Bedcover'],
-            ['key' => 'bedcover3',  'name' => 'Bedcover 3',        'price' => 35000,  'unit' => 'set', 'type' => 'satuan', 'duration_label' => '1 Minggu',  'category' => 'Bedcover'],
-            ['key' => 'bedcover',   'name' => 'Bedcover 1 Set',    'price' => 50000,  'unit' => 'set', 'type' => 'satuan', 'duration_label' => '1 Minggu',  'category' => 'Bedcover'],
+            ['key' => 'bedcover1',  'name' => 'Bedcover 1',  'description' => 'Bedcover 1 dengan bahan deterjen berkualitas tinggi',      'price' => 40000,  'unit' => 'set', 'type' => 'satuan', 'duration_label' => '1 Minggu',  'category' => 'Bedcover'],
+            ['key' => 'bedcover2',  'name' => 'Bedcover 2',        'description' => 'Bedcover 2 dengan bahan deterjen berkualitas tinggi',        'price' => 30000,  'unit' => 'set', 'type' => 'satuan', 'duration_label' => '1 Minggu',  'category' => 'Bedcover'],
+            ['key' => 'bedcover3',  'name' => 'Bedcover 3',        'description' => 'Bedcover 3 dengan bahan deterjen berkualitas tinggi',        'price' => 35000,  'unit' => 'set', 'type' => 'satuan', 'duration_label' => '1 Minggu',  'category' => 'Bedcover'],
+            ['key' => 'bedcover',   'name' => 'Bedcover 1 Set',    'description' => 'Bedcover 1 Set dengan bahan deterjen berkualitas tinggi',    'price' => 50000,  'unit' => 'set', 'type' => 'satuan', 'duration_label' => '1 Minggu',  'category' => 'Bedcover']
         ];
 
         // Urutan kategori yang dipakai untuk tab di Services Section.
