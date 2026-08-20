@@ -77,10 +77,10 @@ class LandingController extends Controller
         ];
 
         $contact = [
-            'whatsapp_number' => '6281234567890', // format internasional tanpa "+"
-            'email'           => 'halo@permanalaundry.com',
-            'address'         => 'Jl. Kelapa Dua Raya No. 45, Kel. Kelapa Dua, Kec. Kelapa Dua, Tangerang, Banten 15810',
-            'operational'     => 'Setiap hari, 07.00 – 21.00 WIB',
+            'whatsapp_number' => '6289691502028', // format internasional tanpa "+"
+            'email'           => 'permanalaundry@gmail.com',
+            'address'         => 'Jl. Pesantren I No.52, RT.002/RW.007, Kreo Selatan, Kec. Larangan, Kota Tangerang, Banten 15156',
+            'operational'     => 'Setiap hari, 11.00 – 23.59 WIB',
         ];
 
         return view('landing.index', compact('services', 'categories', 'testimonials', 'contact'));
