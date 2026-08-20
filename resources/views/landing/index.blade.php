@@ -33,7 +33,7 @@
         {{-- ==========================================================
              HERO SECTION
         =========================================================== --}}
-        <section class="mx-auto max-w-6xl px-6 pb-20 pt-10 md:pb-28 md:pt-24">
+        <section class="mx-auto max-w-6xl px-6 pb-20 pt-16 md:pb-28 md:pt-24">
             <div class="grid items-center gap-12 md:grid-cols-2">
                 <div>
                     <span class="inline-flex items-center rounded-full bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700">
