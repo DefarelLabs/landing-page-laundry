@@ -33,7 +33,7 @@
         {{-- ==========================================================
              HERO SECTION
         =========================================================== --}}
-        <section class="mx-auto max-w-6xl px-6 pb-20 pt-16 md:pb-28 md:pt-24">
+        <section class="mx-auto max-w-6xl px-6 pb-20 pt-10 md:pb-28 md:pt-24">
             <div class="grid items-center gap-12 md:grid-cols-2">
                 <div>
                     <span class="inline-flex items-center rounded-full bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700">
@@ -337,7 +337,7 @@
                     <div class="overflow-hidden rounded-3xl border border-slate-200">
                         <iframe
                             title="Lokasi Permana Laundry"
-                            src="https://maps.google.com/maps?q=Kelapa%20Dua%2C%20Tangerang&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                            src="https://maps.google.com/maps?q=Permana%20Laundry%2C%20Tangerang&t=&z=14&ie=UTF8&iwloc=&output=embed"
                             class="h-full min-h-[320px] w-full"
                             loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"
