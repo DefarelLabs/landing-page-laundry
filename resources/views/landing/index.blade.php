@@ -158,6 +158,7 @@
                             >
                                 <h3 class="text-base font-semibold text-slate-900">{{ $service['name'] }}</h3>
                                 <p class="mt-1 text-xs text-slate-400">Estimasi selesai {{ $service['duration_label'] }}</p>
+                                <p class="mt-2 text-sm leading-relaxed text-slate-500">{{ $service['description'] }}</p>
 
                                 <div class="mt-4 border-t border-slate-100 pt-4">
                                     <p class="text-lg font-bold text-sky-600">
