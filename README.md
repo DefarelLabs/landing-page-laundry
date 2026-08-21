@@ -105,10 +105,25 @@ Buka browser ke **http://127.0.0.1:8000**
 ## Struktur Project (bagian yang relevan dengan landing page)
 
 ```
-routes/web.php                              → Route utama landing page
-app/Http/Controllers/LandingController.php  → Data layanan & harga
-resources/views/layouts/app.blade.php       → Layout HTML dasar
-resources/views/landing/index.blade.php     → Isi landing page + kalkulator Alpine.js
+│
+├── routes/
+│   └── web.php                         ← Route utama landing page
+│
+├── public/
+│   └── icons/
+│       └── icon.png                    ← Favicon & Logo Website
+│ 
+├── app/
+│   └── Http/
+│       └── Controllers/
+│           └── LandingController.php   ← Data layanan & harga
+│
+└── resources/
+    └── views/
+        ├── layouts/
+        │   └── app.blade.php           ← Layout HTML dasar
+        └── landing/
+            └── index.blade.php         ← Isi landing page + kalkulator Alpine.js
 ```
 
 ## Mengubah Harga Layanan
