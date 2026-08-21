@@ -16,6 +16,7 @@
             </a>
 
             <div class="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
+                <a href="#home" class="transition hover:text-sky-600">Home</a>
                 <a href="#testimoni" class="transition hover:text-sky-600">Testimoni</a>
                 <a href="#layanan" class="transition hover:text-sky-600">Layanan</a>
                 <a href="#kalkulator" class="transition hover:text-sky-600">Cek Harga</a>
@@ -33,7 +34,7 @@
         {{-- ==========================================================
              HERO SECTION
         =========================================================== --}}
-        <section class="mx-auto max-w-6xl px-6 pb-20 pt-16 md:pb-28 md:pt-24">
+        <section id="home" class="mx-auto max-w-6xl px-6 pb-20 pt-16 md:pb-28 md:pt-24">
             <div class="grid items-center gap-12 md:grid-cols-2">
                 <div>
                     <span class="inline-flex items-center rounded-full bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700">
