@@ -11,7 +11,7 @@
     <header class="sticky top-0 z-50 border-b border-slate-100 bg-white/80 backdrop-blur">
         <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4" aria-label="Navigasi utama">
             <a href="{{ route('landing.index') }}" class="flex items-center gap-2 text-lg font-bold text-slate-900">
-                <img src="{{ asset('icons/favicon.png') }}" alt="Permana Laundry" class="flex h-8 w-8 border-sky-600 border rounded-full">               
+                <img src="{{ asset('icons/favicon.png') }}" alt="Permana Laundry" class="flex h-8 w-8 border rounded-full">               
                 Permana Laundry
             </a>
 
