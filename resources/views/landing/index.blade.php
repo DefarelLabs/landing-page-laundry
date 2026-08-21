@@ -32,44 +32,92 @@
 
     <main>
         {{-- ==========================================================
-             HERO SECTION
+            HERO SECTION — gelap, dengan foto sebagai background
+            Taruh foto outlet/mesin cuci kamu di: public/images/hero-bg.jpg
         =========================================================== --}}
-        <section id="home" class="mx-auto max-w-6xl px-6 pb-20 pt-16 md:pb-28 md:pt-24">
-            <div class="grid items-center gap-12 md:grid-cols-2">
-                <div>
-                    <span class="inline-flex items-center rounded-full bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700">
+        <section id="home" class="relative overflow-hidden">
+            <div
+                class="absolute inset-0 bg-cover bg-center"
+                style="background-image: url('{{ asset('images/hero-bg.jpg') }}')"
+                aria-hidden="true"
+            ></div>
+            <div class="absolute inset-0 bg-slate-900/80" aria-hidden="true"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent" aria-hidden="true"></div>
+
+            <div class="relative mx-auto max-w-6xl px-6 pb-24 pt-20 md:pb-32 md:pt-28">
+                <div class="max-w-2xl">
+                    <span class="inline-flex items-center rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-sky-300 ring-1 ring-white/20 backdrop-blur">
                         Laundry kiloan &amp; express di Tangerang
                     </span>
 
-                    <h1 class="mt-5 text-4xl font-extrabold leading-tight tracking-tight text-slate-900 md:text-5xl">
+                    <h1 class="mt-5 text-4xl font-extrabold leading-tight tracking-tight text-white md:text-6xl">
                         Cucian bersih, wangi, dan
-                        <span class="text-sky-600">selesai tepat waktu.</span>
+                        <span class="text-sky-400">selesai tepat waktu.</span>
                     </h1>
 
-                    <p class="mt-5 max-w-lg text-lg text-slate-500">
+                    <p class="mt-5 max-w-lg text-lg text-slate-300">
                         Permana Laundry mengurus cucianmu dengan standar kebersihan yang konsisten —
                         dari cuci reguler harian sampai express untuk kebutuhan mendadak.
                     </p>
 
                     <div class="mt-8 flex flex-wrap items-center gap-4">
                         <a href="#kalkulator"
-                           class="rounded-full bg-sky-600 px-6 py-3 text-sm font-semibold text-white shadow-sm shadow-sky-200 transition hover:bg-sky-700">
+                        class="rounded-full bg-sky-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-900/40 transition hover:bg-sky-400">
                             Hitung Estimasi Harga
                         </a>
-                        <a href="#layanan" class="text-sm font-semibold text-slate-600 transition hover:text-sky-600">
-                            Lihat semua layanan →
+                        <a href="#kontak"
+                        class="rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
+                            Hubungi Kami
                         </a>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="relative">
-                    <div class="aspect-square w-full max-w-md rounded-3xl bg-sky-50 md:mx-auto md:aspect-[4/5]">
-                        <svg viewBox="0 0 200 200" class="h-full w-full p-10 text-sky-600" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <circle cx="100" cy="100" r="70" stroke="currentColor" stroke-width="6" opacity="0.25"/>
-                            <circle cx="100" cy="100" r="45" stroke="currentColor" stroke-width="6" opacity="0.5"/>
-                            <path d="M100 70a30 30 0 0 1 30 30" stroke="currentColor" stroke-width="6" stroke-linecap="round"/>
-                            <circle cx="100" cy="100" r="10" fill="currentColor"/>
-                        </svg>
+        {{-- ==========================================================
+        ABOUT SECTION
+        Taruh foto outlet di: public/images/about-outlet.jpg ========================================================== --}}
+        <section id="about" class="border-t border-slate-100 py-20">
+            <div class="mx-auto max-w-6xl px-6">
+                <div class="grid items-center gap-12 md:grid-cols-2">
+                    <div class="overflow-hidden rounded-3xl">
+                        <img
+                            src="{{ asset('images/about-outlet.jpg') }}"
+                            alt="Outlet Permana Laundry"
+                            class="h-full w-full object-cover"
+                        >
+                    </div>
+
+                    <div>
+                        <span class="inline-flex items-center rounded-full bg-sky-50 px-3 py-1 text-xs font-semibold text-sky-700">
+                            Tentang Kami
+                        </span>
+
+                        <h2 class="mt-4 text-3xl font-bold tracking-tight text-slate-900">
+                            Laundry terpercaya, dikelola dengan standar yang konsisten
+                        </h2>
+
+                        <p class="mt-4 text-slate-500">
+                            Permana Laundry hadir untuk memudahkan urusan cucianmu — mulai dari cuci
+                            kiloan harian, setrika, hingga item khusus seperti bedcover dan jas. Setiap
+                            cucian dicuci menggunakan deterjen berkualitas dan proses yang terstandar,
+                            supaya hasilnya selalu bersih dan wangi.
+                        </p>
+
+                        <div class="mt-8 grid grid-cols-3 gap-6 border-t border-slate-100 pt-8 text-center">
+                            <div>
+                                <p class="text-2xl font-extrabold text-sky-600">17+</p>
+                                <p class="mt-1 text-xs text-slate-500">Jenis Layanan</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-extrabold text-sky-600">6 Jam</p>
+                                <p class="mt-1 text-xs text-slate-500">Estimasi Tercepat</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-extrabold text-sky-600">7 Hari</p>
+                                <p class="mt-1 text-xs text-slate-500">Buka Setiap Hari</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
