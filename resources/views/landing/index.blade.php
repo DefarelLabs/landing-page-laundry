@@ -39,7 +39,7 @@
         <section id="home" class="relative overflow-hidden">
             <div
                 class="absolute inset-0 bg-cover bg-center"
-                style="background-image: url('{{ asset('images/hero-bg.jpg') }}')"
+                style="background-image: url('{{ asset('images/bg-home.webp') }}')"
                 aria-hidden="true"
             ></div>
             <div class="absolute inset-0 bg-slate-900/80" aria-hidden="true"></div>
@@ -83,7 +83,7 @@
                 <div class="grid items-center gap-12 md:grid-cols-2">
                     <div class="overflow-hidden rounded-3xl">
                         <img
-                            src="{{ asset('images/about-outlet.jpg') }}"
+                            src="{{ asset('icons/icon.png') }}"
                             alt="Outlet Permana Laundry"
                             class="h-full w-full object-cover"
                         >
@@ -408,7 +408,7 @@
 
     {{-- ==========================================================
      FLOATING WHATSAPP BUTTON
-=========================================================== --}}
+    =========================================================== --}}
 
     <a href="https://api.whatsapp.com/send?phone={{ $contact['whatsapp_number'] }}&text={{ urlencode('Halo Permana Laundry, saya ingin bertanya tentang layanan laundry.') }}"
         target="_blank"
