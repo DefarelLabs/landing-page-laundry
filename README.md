@@ -35,7 +35,7 @@ npm -v
 
 ```bash
 cd C:\xampp\htdocs
-git clone <URL_REPO_INI> landing-page-laundry
+git clone https://github.com/DefarelLabs/landing-page-laundry.git
 cd landing-page-laundry
 ```
 
@@ -68,14 +68,14 @@ php artisan key:generate
 ### 5. Setup database
 
 1. Buka **XAMPP Control Panel**, start **Apache** dan **MySQL**.
-2. Buka `http://localhost/phpmyadmin`, buat database baru bernama `permana_laundry_landing`.
+2. Buka `http://localhost/phpmyadmin`, buat database baru bernama `landing-page-laundry`.
 3. Buka file `.env`, sesuaikan bagian database:
 
 ```env
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=permana_laundry_landing
+DB_DATABASE=landing-page-laundry
 DB_USERNAME=root
 DB_PASSWORD=
 ```
