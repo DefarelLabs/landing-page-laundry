@@ -17,6 +17,7 @@
 
             <div class="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
                 <a href="#home" class="transition hover:text-sky-600">Home</a>
+                <a href="#about" class="transition hover:text-sky-600">Tentang</a>
                 <a href="#testimoni" class="transition hover:text-sky-600">Testimoni</a>
                 <a href="#layanan" class="transition hover:text-sky-600">Layanan</a>
                 <a href="#kalkulator" class="transition hover:text-sky-600">Cek Harga</a>
