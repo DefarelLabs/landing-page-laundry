@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Permana Laundry — Laundry Bersih, Cepat, Terpercaya')</title>
     <meta name="description" content="@yield('description', 'Layanan laundry kiloan dan express di Tangerang. Hitung estimasi harga cucianmu secara instan.')">
-    <link rel="icon" href="{{ asset('favicon/favicon.png') }}"/>
+    <link rel="icon" href="{{ asset('icons/favicon.png') }}"/>
 
     {{-- Font: Inter untuk tipografi yang rapi & netral --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
