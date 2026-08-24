@@ -1,0 +1,21 @@
+    body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }
+    [x-cloak] { display: none !important; }
+
+    @keyframes heroWordIn {
+        from { opacity: 0; transform: translateY(14px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes heroFadeIn {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+
+    .hero-word {
+        display: inline-block;
+        opacity: 0;
+        animation: heroWordIn 0.55s ease-out forwards;
+    }
+    .hero-fade {
+        opacity: 0;
+        animation: heroFadeIn 0.9s ease-out forwards;
+    }
