@@ -61,11 +61,11 @@
             
             <div class="flex flex-col gap-4 text-sm font-medium text-slate-600">
                 <a href="#home" @click="mobileOpen = false" class="transition hover:text-sky-600">Home</a>
-                <a href="#about" @click="mobileOpen = false" class="transition hover:text-sky-600">Tentang</a>
+                <a href="#about" @click="mobileOpen = false" class="transition hover:text-sky-600">About</a>
                 <a href="#testimoni" @click="mobileOpen = false" class="transition hover:text-sky-600">Testimoni</a>
-                <a href="#layanan" @click="mobileOpen = false" class="transition hover:text-sky-600">Layanan</a>
-                <a href="#kalkulator" @click="mobileOpen = false" class="transition hover:text-sky-600">Cek Harga</a>
-                <a href="#kontak" @click="mobileOpen = false" class="transition hover:text-sky-600">Kontak</a>
+                <a href="#services" @click="mobileOpen = false" class="transition hover:text-sky-600">Services</a>
+                <a href="#kalkulator" @click="mobileOpen = false" class="transition hover:text-sky-600">Check Price</a>
+                <a href="#contact" @click="mobileOpen = false" class="transition hover:text-sky-600">Contact</a>
                 <a href="#kalkulator" @click="mobileOpen = false"
                 class="mt-2 rounded-full bg-sky-600 px-4 py-2 text-center text-sm font-semibold text-white sm:hidden">
                     Hitung Harga
@@ -116,7 +116,7 @@
                         class="rounded-full bg-sky-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-900/40 transition hover:bg-sky-400">
                             Hitung Estimasi Harga
                         </a>
-                        <a href="#kontak"
+                        <a href="#contact"
                         class="rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
                             Hubungi Kami
                         </a>
@@ -222,7 +222,7 @@
              17 layanan dikelompokkan per kategori pakai tab (Alpine),
              supaya tidak menumpuk jadi grid raksasa yang berantakan.
         =========================================================== --}}
-        <section id="layanan" class="border-t border-slate-100 bg-slate-50/60 py-20">
+        <section id="services" class="border-t border-slate-100 bg-slate-50/60 py-20">
             <div class="mx-auto max-w-6xl px-6">
                 <div class="mx-auto max-w-xl text-center">
                     <h2 class="text-3xl font-bold tracking-tight text-slate-900">Layanan Kami</h2>
