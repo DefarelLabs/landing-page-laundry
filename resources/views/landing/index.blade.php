@@ -392,7 +392,7 @@
         {{-- ==========================================================
              CONTACT & LOCATION SECTION
         =========================================================== --}}
-        <section id="kontak" class="border-t border-slate-100 bg-slate-50/60 py-20">
+        <section id="contact" class="border-t border-slate-100 bg-slate-50/60 py-20">
             <div class="mx-auto max-w-6xl px-6">
                 <div class="grid gap-12 md:grid-cols-2">
                     <div>
