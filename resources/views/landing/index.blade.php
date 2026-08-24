@@ -95,11 +95,18 @@
                     </span>
 
                     <h1 class="mt-5 text-4xl font-extrabold leading-tight tracking-tight text-white md:text-6xl">
-                        Cucian bersih, wangi, dan
-                        <span class="text-sky-400">selesai tepat waktu.</span>
+                        <span class="hero-word" style="animation-delay:0.05s">Cucian</span>
+                        <span class="hero-word" style="animation-delay:0.15s">bersih,</span>
+                        <span class="hero-word" style="animation-delay:0.25s">wangi,</span>
+                        <span class="hero-word" style="animation-delay:0.35s">dan</span>
+                        <span class="text-sky-400">
+                            <span class="hero-word" style="animation-delay:0.45s">selesai</span>
+                            <span class="hero-word" style="animation-delay:0.55s">tepat</span>
+                            <span class="hero-word" style="animation-delay:0.65s">waktu.</span>
+                        </span>
                     </h1>
 
-                    <p class="mt-5 max-w-lg text-lg text-slate-300">
+                    <p class="hero-fade mt-5 max-w-lg text-lg text-slate-300" style="animation-delay:0.85s">
                         Permana Laundry mengurus cucianmu dengan standar kebersihan yang konsisten —
                         dari cuci reguler harian sampai express untuk kebutuhan mendadak.
                     </p>
