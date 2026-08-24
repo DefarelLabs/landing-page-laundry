@@ -8,11 +8,11 @@
     {{-- ==========================================================
          NAVBAR
     =========================================================== --}}
-    <header class="sticky top-0 z-50 border-b border-slate-100 bg-white/80 backdrop-blur">
-        <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4" aria-label="Navigasi utama">
-            <a href="{{ route('landing.index') }}" class="flex items-center gap-2 text-lg font-bold text-slate-900">
-                <img src="{{ asset('icons/icon.png') }}" alt="Permana Laundry" class="flex h-8 w-8 border rounded-full">               
-                Permana Laundry
+    <header class="sticky top-0 z-50 border-b border-slate-100 bg-white/80 backdrop-blur" x-data="{ mobileOpen: false }">
+        <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-3" aria-label="Navigasi utama">
+            <a href="{{ route('landing.index') }}" class="flex items-center gap-2 text-base font-bold text-slate-900">
+                <img src="{{ asset('icons/icon.png') }}" alt="Permana Laundry" class="h-7 w-7 flex-none rounded-full border">
+                <span class="leading-tight">Permana Laundry</span>
             </a>
 
             <div class="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
@@ -24,11 +24,54 @@
                 <a href="#kontak" class="transition hover:text-sky-600">Kontak</a>
             </div>
 
-            <a href="#kalkulator"
-               class="rounded-full bg-sky-600 px-5 py-2 text-sm font-semibold text-white transition hover:bg-sky-700">
-                Hitung Harga
-            </a>
+            <div class="flex items-center gap-3">
+                <a href="#kalkulator"
+                class="hidden rounded-full bg-sky-600 px-4 py-2 text-xs font-semibold text-white transition hover:bg-sky-700 sm:inline-block sm:px-5 sm:text-sm">
+                    Hitung Harga
+                </a>
+
+                <button
+                    type="button"
+                    @click="mobileOpen = !mobileOpen"
+                    class="flex h-9 w-9 items-center justify-center rounded-lg border border-slate-200 text-slate-700 md:hidden"
+                    aria-label="Buka menu"
+                    :aria-expanded="mobileOpen"
+                >
+                    <svg x-show="!mobileOpen" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <svg x-show="mobileOpen" x-cloak class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
         </nav>
+
+        <div
+            x-show="mobileOpen"
+            x-cloak
+            x-transition:enter="transition ease-out duration-150"
+            x-transition:enter-start="opacity-0 -translate-y-2"
+            x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition ease-in duration-100"
+            x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0"
+            @click.outside="mobileOpen = false"
+            class="border-t border-slate-100 bg-white px-6 py-4 md:hidden"
+        >
+            <div class="flex flex-col gap-4 text-sm font-medium text-slate-600">
+                <a href="#home" @click="mobileOpen = false" class="transition hover:text-sky-600">Home</a>
+                <a href="#about" @click="mobileOpen = false" class="transition hover:text-sky-600">Tentang</a>
+                <a href="#testimoni" @click="mobileOpen = false" class="transition hover:text-sky-600">Testimoni</a>
+                <a href="#layanan" @click="mobileOpen = false" class="transition hover:text-sky-600">Layanan</a>
+                <a href="#kalkulator" @click="mobileOpen = false" class="transition hover:text-sky-600">Cek Harga</a>
+                <a href="#kontak" @click="mobileOpen = false" class="transition hover:text-sky-600">Kontak</a>
+                <a href="#kalkulator" @click="mobileOpen = false"
+                class="mt-2 rounded-full bg-sky-600 px-4 py-2 text-center text-sm font-semibold text-white sm:hidden">
+                    Hitung Harga
+                </a>
+            </div>
+        </div>
     </header>
 
     <main>
