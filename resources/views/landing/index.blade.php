@@ -149,16 +149,16 @@
                         </p>
 
                         <div class="mt-8 grid grid-cols-3 gap-6 border-t border-slate-100 pt-8 text-center">
-                            <div>
-                                <p class="text-2xl font-extrabold text-sky-600">17+</p>
+                            <div x-data="counterUp(17)" x-init="observe($el)">
+                                <p class="text-2xl font-extrabold text-sky-600"><span x-text="value"></span>+</p>
                                 <p class="mt-1 text-xs text-slate-500">Jenis Layanan</p>
                             </div>
-                            <div>
-                                <p class="text-2xl font-extrabold text-sky-600">6 Jam</p>
+                            <div x-data="counterUp(6)" x-init="observe($el)">
+                                <p class="text-2xl font-extrabold text-sky-600"><span x-text="value"></span> Jam</p>
                                 <p class="mt-1 text-xs text-slate-500">Estimasi Tercepat</p>
                             </div>
-                            <div>
-                                <p class="text-2xl font-extrabold text-sky-600">7 Hari</p>
+                            <div x-data="counterUp(7)" x-init="observe($el)">
+                                <p class="text-2xl font-extrabold text-sky-600"><span x-text="value"></span> Hari</p>
                                 <p class="mt-1 text-xs text-slate-500">Buka Setiap Hari</p>
                             </div>
                         </div>
@@ -487,6 +487,40 @@
          * Supaya kalau harga di server berubah saat reload, cart tidak
          * membawa data harga basi — selalu dihitung ulang dari `services`.
          */
+        /**
+         * counterUp(target, duration)
+         * ----------------------------
+         * Animasi angka dari 0 menuju `target` saat elemen masuk viewport
+         * (pakai IntersectionObserver). Dipakai di stats section About.
+         */
+        function counterUp(target, duration = 1200) {
+            return {
+                value: 0,
+                started: false,
+                observe(el) {
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting && !this.started) {
+                                this.started = true;
+                                this.animate(target, duration);
+                                observer.disconnect();
+                            }
+                        });
+                    }, { threshold: 0.4 });
+                    observer.observe(el);
+                },
+                animate(target, duration) {
+                    const start = performance.now();
+                    const step = (now) => {
+                        const progress = Math.min((now - start) / duration, 1);
+                        this.value = Math.round(progress * target);
+                        if (progress < 1) requestAnimationFrame(step);
+                    };
+                    requestAnimationFrame(step);
+                },
+            }
+        }
+
         function priceEstimator(services) {
             return {
                 services: services,
