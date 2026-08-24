@@ -57,8 +57,8 @@
             x-transition:leave-start="opacity-100"
             x-transition:leave-end="opacity-0"
             @click.outside="mobileOpen = false"
-            class="border-t border-slate-100 bg-white px-6 py-4 md:hidden"
-        >
+            class="border-t border-slate-100 bg-white px-6 py-4 md:hidden">
+            
             <div class="flex flex-col gap-4 text-sm font-medium text-slate-600">
                 <a href="#home" @click="mobileOpen = false" class="transition hover:text-sky-600">Home</a>
                 <a href="#about" @click="mobileOpen = false" class="transition hover:text-sky-600">Tentang</a>
