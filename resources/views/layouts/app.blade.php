@@ -24,13 +24,6 @@
         dan file ini terhubung lewat @vite bawaan Laravel.
     --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-    <style>
-        body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }
-        /* Sembunyikan elemen ber-x-cloak sampai Alpine.js selesai load,
-           mencegah "kedipan" konten sebelum interaktivitas siap. */
-        [x-cloak] { display: none !important; }
-    </style>
 </head>
 <body class="bg-white text-slate-700 antialiased">
     @yield('content')
