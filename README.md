@@ -115,7 +115,7 @@ Buka browser ke **http://127.0.0.1:8000**
 │   ├── images/
 │   │   └── bg-home.webp                ← Foto background dll
 │   └── css/
-│       └── style.css                   ← CSS External
+│       └── style.css                   ← CSS External untuk animasi dll
 │
 ├── app/
 │   └── Http/
