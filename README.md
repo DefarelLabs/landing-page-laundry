@@ -114,8 +114,10 @@ Buka browser ke **http://127.0.0.1:8000**
 │   │   └── icon.png                    ← Favicon & Logo Website
 │   ├── images/
 │   │   └── bg-home.webp                ← Foto background dll
-│   └── css/
-│       └── style.css                   ← CSS External untuk animasi dll
+│   ├── css/
+│   │   └── style.css                   ← CSS External untuk animasi dll
+│   └── js/
+│       └── script.js                   ← JavaScript External alpine js & animasi
 │
 ├── app/
 │   └── Http/
