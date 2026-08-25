@@ -110,9 +110,13 @@ Buka browser ke **http://127.0.0.1:8000**
 │   └── web.php                         ← Route utama landing page
 │
 ├── public/
-│   └── icons/
-│       └── icon.png                    ← Favicon & Logo Website
-│ 
+│   ├── icons/
+│   │   └── icon.png                    ← Favicon & Logo Website
+│   ├── images/
+│   │   └── bg-home.webp                ← Foto background dll
+│   └── css/
+│       └── style.css                   ← CSS External
+│
 ├── app/
 │   └── Http/
 │       └── Controllers/
