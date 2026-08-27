@@ -35,7 +35,7 @@
     --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-white text-slate-700 antialiased">
+<body class="bg-white text-slate-700 antialiased transition-colors duration-300 dark:bg-slate-950 dark:text-slate-300">
     @yield('content')
 </body>
 </html>
