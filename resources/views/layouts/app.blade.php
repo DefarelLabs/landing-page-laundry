@@ -7,6 +7,16 @@
     <meta name="description" content="@yield('description', 'Layanan laundry kiloan dan express di Tangerang. Hitung estimasi harga cucianmu secara instan.')">
     <link rel="icon" href="{{ asset('icons/icon.png') }}"/>
 
+    <script>
+    (function () {
+        const stored = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (stored === 'dark' || (!stored && prefersDark)) {
+            document.documentElement.classList.add('dark');
+        }
+    })();
+    </script>
+
     {{-- Font: Inter untuk tipografi yang rapi & netral --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
