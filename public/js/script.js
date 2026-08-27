@@ -18,39 +18,7 @@
          * Supaya kalau harga di server berubah saat reload, cart tidak
          * membawa data harga basi — selalu dihitung ulang dari `services`.
          */
-        /**
-         * counterUp(target, duration)
-         * ----------------------------
-         * Animasi angka dari 0 menuju `target` saat elemen masuk viewport
-         * (pakai IntersectionObserver). Dipakai di stats section About.
-         */
-        function counterUp(target, duration = 1200) {
-            return {
-                value: 0,
-                started: false,
-                observe(el) {
-                    const observer = new IntersectionObserver((entries) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting && !this.started) {
-                                this.started = true;
-                                this.animate(target, duration);
-                                observer.disconnect();
-                            }
-                        });
-                    }, { threshold: 0.4 });
-                    observer.observe(el);
-                },
-                animate(target, duration) {
-                    const start = performance.now();
-                    const step = (now) => {
-                        const progress = Math.min((now - start) / duration, 1);
-                        this.value = Math.round(progress * target);
-                        if (progress < 1) requestAnimationFrame(step);
-                    };
-                    requestAnimationFrame(step);
-                },
-            }
-        }
+        
 
         function priceEstimator(services) {
             return {
@@ -125,6 +93,40 @@
                     const message = `Halo Permana Laundry, saya ingin antar cucian:\n${lines}\n\nEstimasi total: Rp${this.formatRupiah(this.total)}`;
 
                     return `https://api.whatsapp.com/send?phone={{ $contact['whatsapp_number'] }}&text=${encodeURIComponent(message)}`;
+                },
+            }
+        }
+
+        /**
+         * counterUp(target, duration)
+         * ----------------------------
+         * Animasi angka dari 0 menuju `target` saat elemen masuk viewport
+         * (pakai IntersectionObserver). Dipakai di stats section About.
+         */
+        function counterUp(target, duration = 2000) {
+            return {
+                value: 0,
+                started: false,
+                observe(el) {
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting && !this.started) {
+                                this.started = true;
+                                this.animate(target, duration);
+                                observer.disconnect();
+                            }
+                        });
+                    }, { threshold: 0.4 });
+                    observer.observe(el);
+                },
+                animate(target, duration) {
+                    const start = performance.now();
+                    const step = (now) => {
+                        const progress = Math.min((now - start) / duration, 1);
+                        this.value = Math.round(progress * target);
+                        if (progress < 1) requestAnimationFrame(step);
+                    };
+                    requestAnimationFrame(step);
                 },
             }
         }
