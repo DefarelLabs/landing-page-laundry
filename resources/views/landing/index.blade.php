@@ -8,7 +8,18 @@
     {{-- ==========================================================
          NAVBAR
     =========================================================== --}}
-    <header class="sticky top-0 z-50 border-b border-slate-100 bg-white/80 backdrop-blur" x-data="{ mobileOpen: false }">
+    <header
+    class="sticky top-0 z-50 border-b border-slate-100 bg-white/80 backdrop-blur transition-colors duration-300 dark:border-slate-800 dark:bg-slate-950/80"
+    x-data="{
+        mobileOpen: false,
+        dark: document.documentElement.classList.contains('dark'),
+        toggleTheme() {
+            this.dark = !this.dark;
+            document.documentElement.classList.toggle('dark', this.dark);
+            localStorage.setItem('theme', this.dark ? 'dark' : 'light');
+        }
+    }"
+>
         <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-3" aria-label="Navigasi utama">
             <a href="{{ route('landing.index') }}" class="flex items-center gap-2 text-base font-bold text-slate-900">
                 <img src="{{ asset('icons/icon.png') }}" alt="Permana Laundry" class="h-7 w-7 flex-none rounded-full border">
