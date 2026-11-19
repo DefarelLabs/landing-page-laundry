@@ -20,7 +20,7 @@ Proyek ini dibangun tanpa memerlukan database maupun proses *build* rumit sehing
 ## Struktur Proyek
 
 ```text
-permana-laundry/
+landing-page-laundry/
 ├── index.html              # Struktur utama halaman web
 ├── README.md               # Dokumentasi proyek
 └── assets/
@@ -36,7 +36,7 @@ permana-laundry/
 
 1. **Clone atau unduh repositori ini:**
    ```bash
-   git clone [https://github.com/username-anda/permana-laundry.git](https://github.com/username-anda/permana-laundry.git)
+   git clone https://github.com/DefarelLabs/landing-page-laundry.git
    cd permana-laundry
    ```
 2. **Jalankan di browser:**
