@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html lang="id" class="scroll-smooth">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Permana Laundry — Laundry Kiloan & Express Modern di Tangerang</title>
-  <meta name="description"
-    content="Layanan laundry kiloan, express 6 jam, satuan, dan bedcover di outlet Permana Laundry Tangerang. Higienis 1 mesin 1 pelanggan, wangi tahan lama, dan selesai tepat waktu." />
+  <meta name="description" content="Layanan laundry kiloan, express 6 jam, satuan, dan bedcover di outlet Permana Laundry Tangerang. Higienis 1 mesin 1 pelanggan, wangi tahan lama, dan selesai tepat waktu." />
 
   <!-- Anti-FOUC Dark Mode Script -->
   <script>
@@ -24,9 +22,7 @@
   <!-- Google Fonts: Plus Jakarta Sans & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Tailwind CSS CDN & Config -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -59,84 +55,123 @@
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
 </head>
 
-<body x-data="laundryApp()"
-  class="bg-slate-50 text-slate-800 antialiased transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100 selection:bg-sky-600 selection:text-white">
+<body
+  x-data="laundryApp()"
+  class="bg-slate-50 text-slate-800 antialiased transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100 selection:bg-sky-600 selection:text-white"
+>
 
   <!-- ====================================================================== -->
   <!-- FLOATING NAVBAR + READING PROGRESS LINE                                -->
   <!-- ====================================================================== -->
   <header class="fixed top-4 inset-x-0 z-50 px-4 sm:px-6">
-    <nav aria-label="Navigasi Utama"
-      class="relative mx-auto max-w-7xl overflow-hidden rounded-2xl border border-slate-200/80 bg-white/85 px-4 py-3 shadow-nav backdrop-blur-md transition-all duration-300 dark:border-slate-800/80 dark:bg-slate-900/85 sm:px-6">
+    <nav
+      aria-label="Navigasi Utama"
+      class="relative mx-auto max-w-7xl overflow-hidden rounded-2xl border border-slate-200/80 bg-white/85 px-4 py-3 shadow-nav backdrop-blur-md transition-all duration-300 dark:border-slate-800/80 dark:bg-slate-900/85 sm:px-6"
+    >
       <!-- Subtle Scroll Progress Line -->
       <div
         class="absolute bottom-0 left-0 h-[2.5px] bg-gradient-to-r from-sky-500 via-cyan-400 to-emerald-400 transition-all duration-150"
-        :style="`width: ${scrollProgress}\%`"></div>
-      <div class="flex items-center justify-between gap-4"> <!-- Kiri: Logo & Nama Brand --> <a href="#home"
-          class="flex items-center gap-2.5 group focus:outline-none">
-          <div
-            class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-sky-500 to-sky-700 text-white shadow-md shadow-sky-600/25 transition-transform duration-300 group-hover:scale-105 group-hover:rotate-6">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        :style="`width: ${scrollProgress}%`"
+      ></div>
+
+      <div class="flex items-center justify-between gap-4">
+        <!-- Kiri: Logo & Nama Brand -->
+        <a href="#home" class="flex items-center gap-2.5 group focus:outline-none">
+          <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-sky-500 to-sky-700 text-white shadow-md shadow-sky-600/25 transition-transform duration-300 group-hover:scale-105 group-hover:rotate-6">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <rect x="3" y="2" width="18" height="20" rx="3" />
               <circle cx="12" cy="13" r="5" />
               <path d="M12 10a3 3 0 0 1 3 3" />
               <line x1="7" y1="6" x2="7.01" y2="6" />
               <line x1="10" y1="6" x2="10.01" y2="6" />
-            </svg> </div>
-          <div class="flex flex-col"> <span
-              class="font-heading text-lg font-extrabold tracking-tight text-slate-900 dark:text-white leading-none">
-              Permana <span class="text-sky-600 dark:text-sky-400">Laundry</span> </span> <span
-              class="text-[11px] font-semibold tracking-wider text-slate-500 dark:text-slate-400 uppercase mt-0.5">
-              Tangerang </span> </div>
-        </a> <!-- Tengah: Menu Navigasi Desktop -->
-        <div class="hidden lg:flex items-center gap-7"> <a href="#home"
+            </svg>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-heading text-lg font-extrabold tracking-tight text-slate-900 dark:text-white leading-none">
+              Permana <span class="text-sky-600 dark:text-sky-400">Laundry</span>
+            </span>
+            <span class="text-[11px] font-semibold tracking-wider text-slate-500 dark:text-slate-400 uppercase mt-0.5">
+              Tangerang
+            </span>
+          </div>
+        </a>
+
+        <!-- Tengah: Menu Navigasi Desktop -->
+        <div class="hidden lg:flex items-center gap-7">
+          <a
+            href="#home"
             :class="activeSection === 'home' ? 'text-sky-600 dark:text-sky-400 font-semibold' : 'text-slate-600 hover:text-sky-600 dark:text-slate-300 dark:hover:text-sky-400'"
-            class="relative py-1 text-sm font-medium tracking-wide transition-colors"> <span>Home</span> <span
-              x-show="activeSection === 'home'" x-transition
-              class="absolute bottom-0 inset-x-0 h-0.5 rounded-full bg-sky-600 dark:bg-sky-400"></span> </a> <a
+            class="relative py-1 text-sm font-medium tracking-wide transition-colors"
+          >
+            <span>Home</span>
+            <span x-show="activeSection === 'home'" x-transition class="absolute bottom-0 inset-x-0 h-0.5 rounded-full bg-sky-600 dark:bg-sky-400"></span>
+          </a>
+          <a
             href="#about"
             :class="activeSection === 'about' ? 'text-sky-600 dark:text-sky-400 font-semibold' : 'text-slate-600 hover:text-sky-600 dark:text-slate-300 dark:hover:text-sky-400'"
-            class="relative py-1 text-sm font-medium tracking-wide transition-colors"> <span>About</span> <span
-              x-show="activeSection === 'about'" x-transition
-              class="absolute bottom-0 inset-x-0 h-0.5 rounded-full bg-sky-600 dark:bg-sky-400"></span> </a> <a
+            class="relative py-1 text-sm font-medium tracking-wide transition-colors"
+          >
+            <span>About</span>
+            <span x-show="activeSection === 'about'" x-transition class="absolute bottom-0 inset-x-0 h-0.5 rounded-full bg-sky-600 dark:bg-sky-400"></span>
+          </a>
+          <a
             href="#services"
             :class="activeSection === 'services' ? 'text-sky-600 dark:text-sky-400 font-semibold' : 'text-slate-600 hover:text-sky-600 dark:text-slate-300 dark:hover:text-sky-400'"
-            class="relative py-1 text-sm font-medium tracking-wide transition-colors"> <span>Services</span> <span
-              x-show="activeSection === 'services'" x-transition
-              class="absolute bottom-0 inset-x-0 h-0.5 rounded-full bg-sky-600 dark:bg-sky-400"></span> </a> <a
+            class="relative py-1 text-sm font-medium tracking-wide transition-colors"
+          >
+            <span>Services</span>
+            <span x-show="activeSection === 'services'" x-transition class="absolute bottom-0 inset-x-0 h-0.5 rounded-full bg-sky-600 dark:bg-sky-400"></span>
+          </a>
+          <a
             href="#check-price"
             :class="activeSection === 'check-price' ? 'text-sky-600 dark:text-sky-400 font-semibold' : 'text-slate-600 hover:text-sky-600 dark:text-slate-300 dark:hover:text-sky-400'"
-            class="relative py-1 text-sm font-medium tracking-wide transition-colors"> <span>Check Price</span> <span
-              x-show="activeSection === 'check-price'" x-transition
-              class="absolute bottom-0 inset-x-0 h-0.5 rounded-full bg-sky-600 dark:bg-sky-400"></span> </a> <a
+            class="relative py-1 text-sm font-medium tracking-wide transition-colors"
+          >
+            <span>Check Price</span>
+            <span x-show="activeSection === 'check-price'" x-transition class="absolute bottom-0 inset-x-0 h-0.5 rounded-full bg-sky-600 dark:bg-sky-400"></span>
+          </a>
+          <a
             href="#testimoni"
             :class="activeSection === 'testimoni' ? 'text-sky-600 dark:text-sky-400 font-semibold' : 'text-slate-600 hover:text-sky-600 dark:text-slate-300 dark:hover:text-sky-400'"
-            class="relative py-1 text-sm font-medium tracking-wide transition-colors"> <span>Testimoni</span> <span
-              x-show="activeSection === 'testimoni'" x-transition
-              class="absolute bottom-0 inset-x-0 h-0.5 rounded-full bg-sky-600 dark:bg-sky-400"></span> </a> <a
+            class="relative py-1 text-sm font-medium tracking-wide transition-colors"
+          >
+            <span>Testimoni</span>
+            <span x-show="activeSection === 'testimoni'" x-transition class="absolute bottom-0 inset-x-0 h-0.5 rounded-full bg-sky-600 dark:bg-sky-400"></span>
+          </a>
+          <a
             href="#contact"
             :class="activeSection === 'contact' ? 'text-sky-600 dark:text-sky-400 font-semibold' : 'text-slate-600 hover:text-sky-600 dark:text-slate-300 dark:hover:text-sky-400'"
-            class="relative py-1 text-sm font-medium tracking-wide transition-colors"> <span>Contact</span> <span
-              x-show="activeSection === 'contact'" x-transition
-              class="absolute bottom-0 inset-x-0 h-0.5 rounded-full bg-sky-600 dark:bg-sky-400"></span> </a> </div>
+            class="relative py-1 text-sm font-medium tracking-wide transition-colors"
+          >
+            <span>Contact</span>
+            <span x-show="activeSection === 'contact'" x-transition class="absolute bottom-0 inset-x-0 h-0.5 rounded-full bg-sky-600 dark:bg-sky-400"></span>
+          </a>
+        </div>
+
         <!-- Kanan: Theme Toggle, CTA Button & Mobile Hamburger -->
-        <div class="flex items-center gap-2.5"> <!-- Toggle Dark / Light Mode --> <button type="button"
-            @click="toggleDarkMode()" :aria-label="darkMode ? 'Aktifkan Mode Terang' : 'Aktifkan Mode Gelap'"
-            class="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-slate-100/80 text-slate-700 transition-all duration-200 hover:scale-105 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-sky-500/50 dark:hover:text-sky-400">
-            <svg x-cloak x-show="darkMode" xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 text-amber-400 transition-transform duration-300 rotate-0" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <div class="flex items-center gap-2.5">
+          <!-- Toggle Dark / Light Mode -->
+          <button
+            type="button"
+            @click="toggleDarkMode()"
+            :aria-label="darkMode ? 'Aktifkan Mode Terang' : 'Aktifkan Mode Gelap'"
+            class="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-slate-100/80 text-slate-700 transition-all duration-200 hover:scale-105 hover:border-sky-300 hover:bg-sky-50 hover:text-sky-600 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:border-sky-500/50 dark:hover:text-sky-400"
+          >
+            <svg x-cloak x-show="darkMode" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-amber-400 transition-transform duration-300 rotate-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="4" />
-              <path
-                d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
-            </svg> <svg x-show="!darkMode" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+            </svg>
+            <svg x-show="!darkMode" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
-            </svg> </button> <!-- CTA Button Desktop --> <a href="#check-price"
-            class="btn-shimmer hidden sm:inline-flex items-center gap-2 rounded-xl bg-sky-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-sky-600/25 transition-all duration-200 hover:bg-sky-700 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            </svg>
+          </button>
+
+          <!-- CTA Button Desktop -->
+          <a
+            href="#check-price"
+            class="btn-shimmer hidden sm:inline-flex items-center gap-2 rounded-xl bg-sky-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm shadow-sky-600/25 transition-all duration-200 hover:bg-sky-700 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
               <rect x="4" y="2" width="16" height="20" rx="2" />
               <line x1="8" y1="6" x2="16" y2="6" />
               <line x1="8" y1="10" x2="8.01" y2="10" />
@@ -146,143 +181,213 @@
               <line x1="12" y1="14" x2="12.01" y2="14" />
               <line x1="16" y1="14" x2="16.01" y2="14" />
               <line x1="8" y1="18" x2="16" y2="18" />
-            </svg> <span>Hitung Harga</span> <span x-cloak x-show="cart.length > 0" x-transition x-text="cart.length"
-              class="ml-0.5 inline-flex h-5 min-w-[20px] items-center justify-center rounded-full bg-white px-1.5 text-xs font-extrabold text-sky-700"></span>
-          </a> <!-- Hamburger Button Mobile --> <button type="button" @click="mobileMenuOpen = !mobileMenuOpen"
-            :aria-expanded="mobileMenuOpen" aria-label="Buka Menu Navigasi"
-            class="inline-flex lg:hidden h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 transition hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700">
-            <svg x-show="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-              viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            </svg>
+            <span>Hitung Harga</span>
+            <span
+              x-cloak
+              x-show="cart.length > 0"
+              x-transition
+              x-text="cart.length"
+              class="ml-0.5 inline-flex h-5 min-w-[20px] items-center justify-center rounded-full bg-white px-1.5 text-xs font-extrabold text-sky-700"
+            ></span>
+          </a>
+
+          <!-- Hamburger Button Mobile -->
+          <button
+            type="button"
+            @click="mobileMenuOpen = !mobileMenuOpen"
+            :aria-expanded="mobileMenuOpen"
+            aria-label="Buka Menu Navigasi"
+            class="inline-flex lg:hidden h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-slate-700 transition hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700"
+          >
+            <svg x-show="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-            </svg> <svg x-cloak x-show="mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-              viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            </svg>
+            <svg x-cloak x-show="mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-            </svg> </button> </div>
-      </div> <!-- Mobile Dropdown Menu -->
-      <div x-cloak x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-200"
-        x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0"
-        x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0"
-        x-transition:leave-end="opacity-0 -translate-y-2" @click.outside="mobileMenuOpen = false"
-        class="lg:hidden mt-3 border-t border-slate-200/80 pt-3 pb-2 dark:border-slate-800">
-        <div class="flex flex-col space-y-1"> <a href="#home" @click="mobileMenuOpen = false"
-            class="rounded-xl px-3 py-2.5 text-sm font-medium tracking-wide text-slate-700 hover:bg-sky-50 hover:text-sky-600 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-sky-400">Home</a>
-          <a href="#about" @click="mobileMenuOpen = false"
-            class="rounded-xl px-3 py-2.5 text-sm font-medium tracking-wide text-slate-700 hover:bg-sky-50 hover:text-sky-600 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-sky-400">About</a>
-          <a href="#services" @click="mobileMenuOpen = false"
-            class="rounded-xl px-3 py-2.5 text-sm font-medium tracking-wide text-slate-700 hover:bg-sky-50 hover:text-sky-600 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-sky-400">Services</a>
-          <a href="#check-price" @click="mobileMenuOpen = false"
-            class="rounded-xl px-3 py-2.5 text-sm font-medium tracking-wide text-slate-700 hover:bg-sky-50 hover:text-sky-600 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-sky-400">Check
-            Price</a> <a href="#testimoni" @click="mobileMenuOpen = false"
-            class="rounded-xl px-3 py-2.5 text-sm font-medium tracking-wide text-slate-700 hover:bg-sky-50 hover:text-sky-600 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-sky-400">Testimoni</a>
-          <a href="#contact" @click="mobileMenuOpen = false"
-            class="rounded-xl px-3 py-2.5 text-sm font-medium tracking-wide text-slate-700 hover:bg-sky-50 hover:text-sky-600 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-sky-400">Contact</a>
-          <div class="pt-2 sm:hidden"> <a href="#check-price" @click="mobileMenuOpen = false"
-              class="flex w-full items-center justify-center gap-2 rounded-xl bg-sky-600 px-4 py-2.5 text-sm font-semibold text-white">
-              Hitung Harga Sekarang </a> </div>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Dropdown Menu -->
+      <div
+        x-cloak
+        x-show="mobileMenuOpen"
+        x-transition:enter="transition ease-out duration-200"
+        x-transition:enter-start="opacity-0 -translate-y-2"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        x-transition:leave="transition ease-in duration-150"
+        x-transition:leave-start="opacity-100 translate-y-0"
+        x-transition:leave-end="opacity-0 -translate-y-2"
+        @click.outside="mobileMenuOpen = false"
+        class="lg:hidden mt-3 border-t border-slate-200/80 pt-3 pb-2 dark:border-slate-800"
+      >
+        <div class="flex flex-col space-y-1">
+          <a href="#home" @click="mobileMenuOpen = false" class="rounded-xl px-3 py-2.5 text-sm font-medium tracking-wide text-slate-700 hover:bg-sky-50 hover:text-sky-600 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-sky-400">Home</a>
+          <a href="#about" @click="mobileMenuOpen = false" class="rounded-xl px-3 py-2.5 text-sm font-medium tracking-wide text-slate-700 hover:bg-sky-50 hover:text-sky-600 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-sky-400">About</a>
+          <a href="#services" @click="mobileMenuOpen = false" class="rounded-xl px-3 py-2.5 text-sm font-medium tracking-wide text-slate-700 hover:bg-sky-50 hover:text-sky-600 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-sky-400">Services</a>
+          <a href="#check-price" @click="mobileMenuOpen = false" class="rounded-xl px-3 py-2.5 text-sm font-medium tracking-wide text-slate-700 hover:bg-sky-50 hover:text-sky-600 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-sky-400">Check Price</a>
+          <a href="#testimoni" @click="mobileMenuOpen = false" class="rounded-xl px-3 py-2.5 text-sm font-medium tracking-wide text-slate-700 hover:bg-sky-50 hover:text-sky-600 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-sky-400">Testimoni</a>
+          <a href="#contact" @click="mobileMenuOpen = false" class="rounded-xl px-3 py-2.5 text-sm font-medium tracking-wide text-slate-700 hover:bg-sky-50 hover:text-sky-600 dark:text-slate-200 dark:hover:bg-slate-800 dark:hover:text-sky-400">Contact</a>
+          <div class="pt-2 sm:hidden">
+            <a href="#check-price" @click="mobileMenuOpen = false" class="flex w-full items-center justify-center gap-2 rounded-xl bg-sky-600 px-4 py-2.5 text-sm font-semibold text-white">
+              Hitung Harga Sekarang
+            </a>
+          </div>
         </div>
       </div>
     </nav>
   </header>
-  <main> <!-- ==================================================================== -->
+
+  <main>
+    <!-- ==================================================================== -->
     <!-- 1. HERO SECTION: SOAP BUBBLES + INTERACTIVE WASHING DRUM SHOWCASE    -->
     <!-- ==================================================================== -->
     <section id="home" class="relative min-h-[95vh] flex items-center overflow-hidden pt-28 pb-20">
       <!-- Background Image & Kontras Overlay -->
-      <div class="absolute inset-0 z-0"> <img
+      <div class="absolute inset-0 z-0">
+        <img
           src="https://images.unsplash.com/photo-1545173168-9f1947eebb7f?auto=format&fit=crop&w=1920&q=80"
           alt="Mesin cuci modern Permana Laundry Tangerang"
-          class="h-full w-full object-cover object-center scale-105" />
+          class="h-full w-full object-cover object-center scale-105"
+        />
         <div class="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-900/85 to-sky-950/80"></div>
         <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/45"></div>
-      </div> <!-- Ambient Glowing Orbs -->
-      <div
-        class="pointer-events-none absolute -top-24 right-8 z-0 h-[420px] w-[420px] rounded-full bg-sky-500/20 blur-3xl animate-float-slow">
       </div>
-      <div
-        class="pointer-events-none absolute bottom-8 left-1/4 z-0 h-80 w-80 rounded-full bg-cyan-400/15 blur-3xl animate-float-reverse">
-      </div> <!-- Floating Translucent Soap Bubbles Effect -->
-      <div aria-hidden="true" class="pointer-events-none absolute inset-0 z-0 overflow-hidden"> <span class="bubble"
-          style="left: 8\%; width: 18px; height: 18px; --dur: 12s; --delay: 0s;"></span> <span class="bubble"
-          style="left: 22\%; width: 28px; height: 28px; --dur: 15s; --delay: 2.5s;"></span> <span class="bubble"
-          style="left: 38\%; width: 14px; height: 14px; --dur: 10s; --delay: 4s;"></span> <span class="bubble"
-          style="left: 55\%; width: 24px; height: 24px; --dur: 14s; --delay: 1s;"></span> <span class="bubble"
-          style="left: 72\%; width: 32px; height: 32px; --dur: 16s; --delay: 3.5s;"></span> <span class="bubble"
-          style="left: 88\%; width: 20px; height: 20px; --dur: 11s; --delay: 5s;"></span> </div>
+
+      <!-- Ambient Glowing Orbs -->
+      <div class="pointer-events-none absolute -top-24 right-8 z-0 h-[420px] w-[420px] rounded-full bg-sky-500/20 blur-3xl animate-float-slow"></div>
+      <div class="pointer-events-none absolute bottom-8 left-1/4 z-0 h-80 w-80 rounded-full bg-cyan-400/15 blur-3xl animate-float-reverse"></div>
+
+      <!-- Floating Translucent Soap Bubbles Effect (Kiri, Tengah & Kanan) -->
+      <div aria-hidden="true" class="pointer-events-none absolute inset-0 z-[15] overflow-hidden">
+        <!-- Area Kiri -->
+        <span class="bubble" style="left: 6%; width: 20px; height: 20px; --dur: 13s; --delay: -2s;"></span>
+        <span class="bubble" style="left: 16%; width: 30px; height: 30px; --dur: 16s; --delay: -8s;"></span>
+        <span class="bubble" style="left: 25%; width: 16px; height: 16px; --dur: 11s; --delay: -5s;"></span>
+
+        <!-- Area Tengah (Celah antara Teks Kiri & Kartu Kanan) -->
+        <span class="bubble" style="left: 34%; width: 24px; height: 24px; --dur: 14s; --delay: -1s;"></span>
+        <span class="bubble" style="left: 41%; width: 32px; height: 32px; --dur: 17s; --delay: -9s;"></span>
+        <span class="bubble" style="left: 47%; width: 18px; height: 18px; --dur: 12s; --delay: -4s;"></span>
+        <span class="bubble" style="left: 53%; width: 26px; height: 26px; --dur: 15s; --delay: -11s;"></span>
+        <span class="bubble" style="left: 58%; width: 15px; height: 15px; --dur: 11s; --delay: -6s;"></span>
+
+        <!-- Area Kanan -->
+        <span class="bubble" style="left: 67%; width: 22px; height: 22px; --dur: 14s; --delay: -3s;"></span>
+        <span class="bubble" style="left: 77%; width: 28px; height: 28px; --dur: 16s; --delay: -10s;"></span>
+        <span class="bubble" style="left: 86%; width: 18px; height: 18px; --dur: 12s; --delay: -7s;"></span>
+        <span class="bubble" style="left: 93%; width: 24px; height: 24px; --dur: 15s; --delay: -2s;"></span>
+      </div>
+
       <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"> <!-- Kolom Kiri: Copywriting & CTA Utama -->
-          <div x-init="observeReveal($el, 40)" class="reveal-up lg:col-span-7"> <!-- Badge Kecil -->
-            <div
-              class="inline-flex items-center gap-2.5 rounded-full border border-sky-400/35 bg-sky-500/15 px-4 py-1.5 backdrop-blur-md mb-6 shadow-glow">
-              <span class="relative flex h-2.5 w-2.5"> <span
-                  class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-sky-400"></span> </span> <span
-                class="text-xs sm:text-sm font-semibold tracking-wide text-sky-200"> Laundry Kiloan &amp; Express di
-                Tangerang </span> <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-cyan-300 animate-twinkle"
-                viewBox="0 0 24 24" fill="currentColor">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <!-- Kolom Kiri: Copywriting & CTA Utama -->
+          <div x-init="observeReveal($el, 40)" class="reveal-up lg:col-span-7">
+            <!-- Badge Kecil -->
+            <div class="inline-flex items-center gap-2.5 rounded-full border border-sky-400/35 bg-sky-500/15 px-4 py-1.5 backdrop-blur-md mb-6 shadow-glow">
+              <span class="relative flex h-2.5 w-2.5">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-sky-400"></span>
+              </span>
+              <span class="text-xs sm:text-sm font-semibold tracking-wide text-sky-200">
+                Laundry Kiloan &amp; Express di Tangerang
+              </span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-cyan-300 animate-twinkle" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z" />
-              </svg> </div> <!-- Headline Besar -->
-            <h1
-              class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.13]">
-              Cucian bersih, wangi, dan <span
-                class="bg-gradient-to-r from-sky-400 via-cyan-300 to-teal-300 bg-clip-text text-transparent">selesai
-                tepat waktu.</span> </h1> <!-- Subheadline -->
-            <p class="mt-6 text-base sm:text-lg text-slate-200/90 leading-relaxed max-w-2xl"> Permana Laundry
-              menghadirkan standar pencucian higienis <strong>1 mesin untuk 1 pelanggan</strong>, deterjen antibakteri
-              ramah serat kain, dengan outlet yang nyaman dan mudah dijangkau di Kota Tangerang. </p>
+              </svg>
+            </div>
+
+            <!-- Headline Besar -->
+            <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.13]">
+              Cucian bersih, wangi, dan <span class="bg-gradient-to-r from-sky-400 via-cyan-300 to-teal-300 bg-clip-text text-transparent">selesai tepat waktu.</span>
+            </h1>
+
+            <!-- Subheadline -->
+            <p class="mt-6 text-base sm:text-lg text-slate-200/90 leading-relaxed max-w-2xl">
+              Permana Laundry menghadirkan standar pencucian higienis <strong>1 mesin untuk 1 pelanggan</strong>, deterjen antibakteri ramah serat kain, dengan outlet yang nyaman dan mudah dijangkau di Kota Tangerang.
+            </p>
+
             <!-- 2 Tombol CTA -->
-            <div class="mt-9 flex flex-col sm:flex-row items-stretch sm:items-center gap-4"> <a href="#check-price"
-                class="btn-shimmer group inline-flex items-center justify-center gap-2.5 rounded-2xl bg-sky-600 px-7 py-4 text-base font-semibold text-white shadow-lg shadow-sky-600/35 transition-all duration-200 hover:bg-sky-500 hover:-translate-y-0.5 hover:shadow-sky-500/50 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-2 focus:ring-offset-slate-900">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24"
-                  fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <div class="mt-9 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+              <a
+                href="#check-price"
+                class="btn-shimmer group inline-flex items-center justify-center gap-2.5 rounded-2xl bg-sky-600 px-7 py-4 text-base font-semibold text-white shadow-lg shadow-sky-600/35 transition-all duration-200 hover:bg-sky-500 hover:-translate-y-0.5 hover:shadow-sky-500/50 focus:outline-none focus:ring-2 focus:ring-sky-400 focus:ring-offset-2 focus:ring-offset-slate-900"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform duration-300 group-hover:scale-110" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
                   <rect x="4" y="2" width="16" height="20" rx="2" />
                   <line x1="8" y1="6" x2="16" y2="6" />
                   <line x1="8" y1="10" x2="16" y2="10" />
                   <line x1="8" y1="14" x2="12" y2="14" />
                   <line x1="8" y1="18" x2="16" y2="18" />
-                </svg> <span>Hitung Estimasi Harga</span> </a> <a href="#contact"
-                class="group inline-flex items-center justify-center gap-2.5 rounded-2xl border border-white/25 bg-white/10 px-7 py-4 text-base font-semibold text-white backdrop-blur-md transition-all duration-200 hover:bg-white/20 hover:border-white/40 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-white/50">
-                <span>Lokasi Outlet</span> <svg xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 24 24"
-                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                </svg>
+                <span>Hitung Estimasi Harga</span>
+              </a>
+
+              <a
+                href="#contact"
+                class="group inline-flex items-center justify-center gap-2.5 rounded-2xl border border-white/25 bg-white/10 px-7 py-4 text-base font-semibold text-white backdrop-blur-md transition-all duration-200 hover:bg-white/20 hover:border-white/40 hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-white/50"
+              >
+                <span>Lokasi Outlet</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M5 12h14" />
                   <path d="m12 5 7 7-7 7" />
-                </svg> </a> </div> <!-- Highlight Keunggulan Singkat -->
-            <div class="mt-12 grid grid-cols-2 sm:grid-cols-3 gap-4 border-t border-white/15 pt-7 max-w-2xl">
-              <div class="flex items-center gap-2.5 text-sm text-slate-200"> <span
-                  class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-sky-500/25 text-sky-300 font-bold">✓</span>
-                <span>1 Mesin 1 Pelanggan</span> </div>
-              <div class="flex items-center gap-2.5 text-sm text-slate-200"> <span
-                  class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-sky-500/25 text-sky-300 font-bold">✓</span>
-                <span>Setrika Uap Boiler</span> </div>
-              <div class="flex items-center gap-2.5 text-sm text-slate-200 col-span-2 sm:col-span-1"> <span
-                  class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-sky-500/25 text-sky-300 font-bold">✓</span>
-                <span>Timbangan Digital Akurat</span> </div>
+                </svg>
+              </a>
             </div>
-          </div> <!-- Kolom Kanan: Interactive Washing Drum & Live Status Card -->
+
+            <!-- Highlight Keunggulan Singkat -->
+            <div class="mt-12 grid grid-cols-2 sm:grid-cols-3 gap-4 border-t border-white/15 pt-7 max-w-2xl">
+              <div class="flex items-center gap-2.5 text-sm text-slate-200">
+                <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-sky-500/25 text-sky-300 font-bold">✓</span>
+                <span>1 Mesin 1 Pelanggan</span>
+              </div>
+              <div class="flex items-center gap-2.5 text-sm text-slate-200">
+                <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-sky-500/25 text-sky-300 font-bold">✓</span>
+                <span>Setrika Uap Boiler</span>
+              </div>
+              <div class="flex items-center gap-2.5 text-sm text-slate-200 col-span-2 sm:col-span-1">
+                <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-sky-500/25 text-sky-300 font-bold">✓</span>
+                <span>Timbangan Digital Akurat</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kolom Kanan: Interactive Washing Drum & Live Status Card -->
           <div x-init="observeReveal($el, 160)" class="reveal-scale lg:col-span-5">
-            <div
-              class="animate-float-slow rounded-3xl border border-white/20 bg-slate-900/55 p-6 backdrop-blur-xl shadow-2xl text-white">
+            <div class="animate-float-slow rounded-3xl border border-white/20 bg-slate-900/55 p-6 backdrop-blur-xl shadow-2xl text-white">
               <!-- Card Top Header -->
               <div class="flex items-center justify-between border-b border-white/15 pb-4">
                 <div>
                   <p class="text-[11px] font-bold uppercase tracking-widest text-sky-300">Teknologi Perawatan</p>
                   <p class="font-heading text-base font-bold text-white mt-0.5">Simulasi Proses Permana</p>
-                </div> <span
-                  class="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/20 border border-emerald-400/35 px-3 py-1 text-xs font-semibold text-emerald-300">
-                  <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span> Outlet Buka </span>
-              </div> <!-- Interactive Mode Selector Pills -->
-              <div class="mt-4 grid grid-cols-3 gap-1.5 rounded-2xl bg-white/5 p-1.5 border border-white/10"> <template
-                  x-for="mode in heroMachineModes" :key="mode.id"> <button type="button"
+                </div>
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/20 border border-emerald-400/35 px-3 py-1 text-xs font-semibold text-emerald-300">
+                  <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  Outlet Buka
+                </span>
+              </div>
+
+              <!-- Interactive Mode Selector Pills -->
+              <div class="mt-4 grid grid-cols-3 gap-1.5 rounded-2xl bg-white/5 p-1.5 border border-white/10">
+                <template x-for="mode in heroMachineModes" :key="mode.id">
+                  <button
+                    type="button"
                     @click="activeMachineMode = mode.id"
-                    :class="activeMachineMode === mode.id ? 'bg-sky-500 text-white shadow-md' : 'text-slate-300 hover:text-white hover:bg-white/5'"
+                    :class="activeMachineMode === mode.id
+                      ? 'bg-sky-500 text-white shadow-md'
+                      : 'text-slate-300 hover:text-white hover:bg-white/5'"
                     class="rounded-xl py-2 px-2 text-[11px] font-bold transition-all duration-200"
-                    x-text="mode.label"></button> </template> </div> <!-- Animated SVG Washing Machine Porthole -->
-              <div
-                class="mt-5 flex items-center gap-5 rounded-2xl bg-gradient-to-br from-sky-950/80 to-slate-900/90 p-4 border border-sky-400/20">
+                    x-text="mode.label"
+                  ></button>
+                </template>
+              </div>
+
+              <!-- Animated SVG Washing Machine Porthole -->
+              <div class="mt-5 flex items-center gap-5 rounded-2xl bg-gradient-to-br from-sky-950/80 to-slate-900/90 p-4 border border-sky-400/20">
                 <div class="relative h-24 w-24 shrink-0">
-                  <div
-                    class="absolute inset-0 rounded-full border-4 border-slate-600/80 bg-slate-950 shadow-inner flex items-center justify-center overflow-hidden">
+                  <div class="absolute inset-0 rounded-full border-4 border-slate-600/80 bg-slate-950 shadow-inner flex items-center justify-center overflow-hidden">
                     <svg class="absolute inset-0 h-full w-full" viewBox="0 0 100 100">
                       <defs>
                         <clipPath id="drumClip">
@@ -290,274 +395,375 @@
                         </clipPath>
                       </defs>
                       <g clip-path="url(#drumClip)">
-                        <path class="animate-wave-flow"
+                        <path
+                          class="animate-wave-flow"
                           :fill="activeMachineMode === 'wash' ? 'rgba(14,165,233,0.45)' : (activeMachineMode === 'dry' ? 'rgba(251,191,36,0.32)' : 'rgba(52,211,153,0.35)')"
-                          d="M0 55 Q 25 45, 50 55 T 100 55 T 150 55 T 200 55 V 100 H 0 Z" />
+                          d="M0 55 Q 25 45, 50 55 T 100 55 T 150 55 T 200 55 V 100 H 0 Z"
+                        />
                         <g class="animate-drum-spin">
-                          <circle cx="50" cy="50" r="34" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="2"
-                            stroke-dasharray="8 6" />
+                          <circle cx="50" cy="50" r="34" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="2" stroke-dasharray="8 6" />
                           <rect x="34" y="32" width="16" height="12" rx="4" fill="rgba(56,189,248,0.75)" />
                           <rect x="52" y="52" width="15" height="11" rx="4" fill="rgba(255,255,255,0.75)" />
                           <circle cx="42" cy="60" r="4" fill="rgba(186,230,253,0.9)" />
                         </g>
                       </g>
                     </svg>
-                    <div
-                      class="pointer-events-none absolute inset-1 rounded-full border border-white/25 bg-gradient-to-tr from-transparent via-white/5 to-white/20">
-                    </div>
+                    <div class="pointer-events-none absolute inset-1 rounded-full border border-white/25 bg-gradient-to-tr from-transparent via-white/5 to-white/20"></div>
                   </div>
-                </div> <!-- Dynamic Telemetry Details -->
+                </div>
+
+                <!-- Dynamic Telemetry Details -->
                 <div class="min-w-0 flex-1">
-                  <div class="flex items-center gap-2"> <span
-                      class="rounded-md bg-sky-500/25 px-2 py-0.5 text-[11px] font-bold text-sky-300"
-                      x-text="currentMachineMode.rpm"></span> <span
-                      class="rounded-md bg-cyan-500/20 px-2 py-0.5 text-[11px] font-bold text-cyan-200"
-                      x-text="currentMachineMode.temp"></span> </div>
+                  <div class="flex items-center gap-2">
+                    <span class="rounded-md bg-sky-500/25 px-2 py-0.5 text-[11px] font-bold text-sky-300" x-text="currentMachineMode.rpm"></span>
+                    <span class="rounded-md bg-cyan-500/20 px-2 py-0.5 text-[11px] font-bold text-cyan-200" x-text="currentMachineMode.temp"></span>
+                  </div>
                   <p class="mt-2 font-heading text-sm font-bold text-white" x-text="currentMachineMode.label"></p>
                   <p class="mt-1 text-xs text-slate-300 leading-relaxed" x-text="currentMachineMode.detail"></p>
                 </div>
-              </div> <!-- Quick Rate Preview -->
-              <div class="mt-4 space-y-2.5">
-                <div
-                  class="flex items-center justify-between rounded-xl bg-white/5 px-3.5 py-2.5 border border-white/10">
-                  <span class="text-xs sm:text-sm font-medium text-slate-200">Cuci Komplit Reguler</span> <span
-                    class="font-heading text-sm font-extrabold text-sky-300">Rp 7.000<span
-                      class="text-xs font-normal text-slate-400">/kg</span></span> </div>
-                <div
-                  class="flex items-center justify-between rounded-xl bg-white/5 px-3.5 py-2.5 border border-white/10">
-                  <span class="text-xs sm:text-sm font-medium text-slate-200">Express Kilat 6 Jam</span> <span
-                    class="font-heading text-sm font-extrabold text-sky-300">Rp 15.000<span
-                      class="text-xs font-normal text-slate-400">/kg</span></span> </div>
               </div>
+
+              <!-- Quick Rate Preview -->
+              <div class="mt-4 space-y-2.5">
+                <div class="flex items-center justify-between rounded-xl bg-white/5 px-3.5 py-2.5 border border-white/10">
+                  <span class="text-xs sm:text-sm font-medium text-slate-200">Cuci Komplit Reguler</span>
+                  <span class="font-heading text-sm font-extrabold text-sky-300">Rp 7.000<span class="text-xs font-normal text-slate-400">/kg</span></span>
+                </div>
+                <div class="flex items-center justify-between rounded-xl bg-white/5 px-3.5 py-2.5 border border-white/10">
+                  <span class="text-xs sm:text-sm font-medium text-slate-200">Express Kilat 6 Jam</span>
+                  <span class="font-heading text-sm font-extrabold text-sky-300">Rp 15.000<span class="text-xs font-normal text-slate-400">/kg</span></span>
+                </div>
+              </div>
+
               <div class="mt-4 flex items-center justify-between pt-3 border-t border-white/15 text-xs text-slate-300">
-                <span>Layanan: <strong class="text-white" x-text="contact.serviceModeLabel">Drop-Off &amp; Ambil di
-                    Outlet</strong></span> <a href="#services"
-                  class="font-semibold text-sky-300 hover:text-sky-200 underline underline-offset-4"> Lihat 17 Layanan →
-                </a> </div>
+                <span>Layanan: <strong class="text-white" x-text="contact.serviceModeLabel">Drop-Off &amp; Ambil di Outlet</strong></span>
+                <a href="#services" class="font-semibold text-sky-300 hover:text-sky-200 underline underline-offset-4">
+                  Lihat 17 Layanan →
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section> <!-- ==================================================================== -->
+    </section>
+
+    <!-- ==================================================================== -->
     <!-- INFINITE MARQUEE HIGHLIGHTS BAR                                      -->
     <!-- ==================================================================== -->
-    <div
-      class="relative overflow-hidden border-y border-sky-200/70 bg-sky-600 py-3.5 text-white dark:border-sky-900 dark:bg-sky-950">
-      <div class="animate-marquee flex items-center gap-8"> <template x-for="copy in [1, 2]" :key="copy">
-          <div class="flex items-center gap-8 shrink-0"> <template x-for="(text, idx) in marqueeHighlights"
-              :key="copy + '-' + idx">
-              <div class="flex items-center gap-3 text-xs sm:text-sm font-bold tracking-wide uppercase"> <svg
-                  xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-cyan-200 shrink-0" viewBox="0 0 24 24"
-                  fill="currentColor">
+    <div class="relative overflow-hidden border-y border-sky-200/70 bg-sky-600 py-3.5 text-white dark:border-sky-900 dark:bg-sky-950">
+      <div class="animate-marquee flex items-center gap-8">
+        <template x-for="copy in [1, 2]" :key="copy">
+          <div class="flex items-center gap-8 shrink-0">
+            <template x-for="(text, idx) in marqueeHighlights" :key="copy + '-' + idx">
+              <div class="flex items-center gap-3 text-xs sm:text-sm font-bold tracking-wide uppercase">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-cyan-200 shrink-0" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z" />
-                </svg> <span x-text="text"></span> </div>
-            </template> </div>
-        </template> </div>
-    </div> <!-- ==================================================================== -->
+                </svg>
+                <span x-text="text"></span>
+              </div>
+            </template>
+          </div>
+        </template>
+      </div>
+    </div>
+
+    <!-- ==================================================================== -->
     <!-- 2. ABOUT SECTION, ALUR KERJA & ANIMATED COUNTER                      -->
     <!-- ==================================================================== -->
     <section id="about" class="py-20 lg:py-28 bg-white dark:bg-slate-900 transition-colors duration-300">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"> <!-- Kolom Kiri: Foto Outlet / Visual -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <!-- Kolom Kiri: Foto Outlet / Visual -->
           <div x-init="observeReveal($el, 0)" class="reveal-left lg:col-span-6 relative">
-            <div
-              class="group relative overflow-hidden rounded-3xl shadow-2xl border border-slate-200/70 dark:border-slate-800">
-              <img src="https://images.unsplash.com/photo-1582735689369-4fe89db7114c?auto=format&fit=crop&w=1000&q=80"
+            <div class="group relative overflow-hidden rounded-3xl shadow-2xl border border-slate-200/70 dark:border-slate-800">
+              <img
+                src="https://images.unsplash.com/photo-1582735689369-4fe89db7114c?auto=format&fit=crop&w=1000&q=80"
                 alt="Hasil lipatan pakaian bersih dan rapi Permana Laundry"
-                class="h-[380px] sm:h-[440px] w-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                class="h-[380px] sm:h-[440px] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
               <div class="absolute inset-0 bg-gradient-to-t from-slate-900/55 via-transparent to-transparent"></div>
-            </div> <!-- Floating Badge di Sudut Foto -->
-            <div
-              class="animate-float-reverse mt-4 sm:mt-0 sm:absolute sm:-bottom-6 sm:right-6 rounded-2xl border border-slate-200 bg-white p-4 shadow-xl dark:border-slate-700 dark:bg-slate-800 flex items-center gap-3.5">
-              <div
-                class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-sky-100 text-sky-600 dark:bg-sky-900/50 dark:text-sky-400">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                  stroke="currentColor" stroke-width="2">
-                  <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg> </div>
+            </div>
+
+            <!-- Floating Badge di Sudut Foto -->
+            <div class="animate-float-reverse mt-4 sm:mt-0 sm:absolute sm:-bottom-6 sm:right-6 rounded-2xl border border-slate-200 bg-white p-4 shadow-xl dark:border-slate-700 dark:bg-slate-800 flex items-center gap-3.5">
+              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-sky-100 text-sky-600 dark:bg-sky-900/50 dark:text-sky-400">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
               <div>
                 <p class="text-sm font-bold text-slate-900 dark:text-white">Garansi Higienis &amp; Rapi</p>
                 <p class="text-xs text-slate-500 dark:text-slate-400">Air tersaring UV &amp; parfum tahan lama</p>
               </div>
             </div>
-          </div> <!-- Kolom Kanan: Deskripsi Permana Laundry -->
-          <div x-init="observeReveal($el, 120)" class="reveal-right lg:col-span-6"> <span
-              class="inline-block rounded-lg bg-sky-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-sky-600 dark:bg-sky-950 dark:text-sky-400">
-              Tentang Kami </span>
-            <h2
-              class="mt-3 font-heading text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
-              Solusi Perawatan Pakaian Modern untuk Keluarga &amp; Profesional di Tangerang </h2>
-            <p class="mt-5 text-base text-slate-600 dark:text-slate-300 leading-relaxed"> Berdiri di jantung Kota
-              Tangerang, <strong>Permana Laundry</strong> hadir menjawab kebutuhan pencucian pakaian yang tidak hanya
-              bersih secara kasat mata, tetapi juga higienis, lembut di serat kain, dan selesai sesuai jadwal yang
-              dijanjikan. </p>
-            <p class="mt-4 text-base text-slate-600 dark:text-slate-300 leading-relaxed"> Setiap pesanan diproses
-              menggunakan mesin komersial berteknologi pengeringan penuh (bebas bau apek saat musim hujan), dipisahkan
-              berdasarkan warna dan jenis bahan, serta dikemas rapi siap simpan di lemari Anda. </p>
+          </div>
+
+          <!-- Kolom Kanan: Deskripsi Permana Laundry -->
+          <div x-init="observeReveal($el, 120)" class="reveal-right lg:col-span-6">
+            <span class="inline-block rounded-lg bg-sky-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-sky-600 dark:bg-sky-950 dark:text-sky-400">
+              Tentang Kami
+            </span>
+            <h2 class="mt-3 font-heading text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
+              Solusi Perawatan Pakaian Modern untuk Keluarga &amp; Profesional di Tangerang
+            </h2>
+            <p class="mt-5 text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+              Berdiri di jantung Kota Tangerang, <strong>Permana Laundry</strong> hadir menjawab kebutuhan pencucian pakaian yang tidak hanya bersih secara kasat mata, tetapi juga higienis, lembut di serat kain, dan selesai sesuai jadwal yang dijanjikan.
+            </p>
+            <p class="mt-4 text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+              Setiap pesanan diproses menggunakan mesin komersial berteknologi pengeringan penuh (bebas bau apek saat musim hujan), dipisahkan berdasarkan warna dan jenis bahan, serta dikemas rapi siap simpan di lemari Anda.
+            </p>
+
             <ul class="mt-6 space-y-3">
-              <li class="flex items-start gap-3 text-sm sm:text-base text-slate-700 dark:text-slate-200"> <span
-                  class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-sky-600 text-white text-xs font-bold">✓</span>
-                <span>Pencucian terpisah per pelanggan untuk mencegah pakaian tertukar atau luntur.</span> </li>
-              <li class="flex items-start gap-3 text-sm sm:text-base text-slate-700 dark:text-slate-200"> <span
-                  class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-sky-600 text-white text-xs font-bold">✓</span>
+              <li class="flex items-start gap-3 text-sm sm:text-base text-slate-700 dark:text-slate-200">
+                <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-sky-600 text-white text-xs font-bold">✓</span>
+                <span>Pencucian terpisah per pelanggan untuk mencegah pakaian tertukar atau luntur.</span>
+              </li>
+              <li class="flex items-start gap-3 text-sm sm:text-base text-slate-700 dark:text-slate-200">
+                <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-sky-600 text-white text-xs font-bold">✓</span>
                 <span>Pilihan layanan fleksibel mulai dari kiloan harian, bedcover, jas, hingga express 6 jam.</span>
               </li>
-              <li class="flex items-start gap-3 text-sm sm:text-base text-slate-700 dark:text-slate-200"> <span
-                  class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-sky-600 text-white text-xs font-bold">✓</span>
-                <span>Transparansi timbangan digital langsung di outlet tanpa biaya tersembunyi.</span> </li>
+              <li class="flex items-start gap-3 text-sm sm:text-base text-slate-700 dark:text-slate-200">
+                <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-sky-600 text-white text-xs font-bold">✓</span>
+                <span>Transparansi timbangan digital langsung di outlet tanpa biaya tersembunyi.</span>
+              </li>
             </ul>
           </div>
-        </div> <!-- 3 Kartu Statistik dengan Animated Counter & Mouse Spotlight -->
-        <div x-ref="statsContainer" class="mt-16 lg:mt-24 grid grid-cols-1 sm:grid-cols-3 gap-6"> <template
-            x-for="(stat, index) in stats" :key="stat.id">
-            <div x-init="observeReveal($el, index * 110)" @mousemove="handleSpotlight($event)"
-              class="reveal-up spotlight-card group rounded-2xl border border-slate-200/80 bg-slate-50 p-7 text-center shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:border-sky-400 dark:border-slate-800 dark:bg-slate-950/70 dark:hover:border-sky-600">
-              <div
-                class="font-heading text-4xl sm:text-5xl font-extrabold text-sky-600 dark:text-sky-400 transition-transform duration-300 group-hover:scale-105">
-                <span x-text="stat.current">0</span><span x-text="stat.suffix"></span> </div>
+        </div>
+
+        <!-- 3 Kartu Statistik dengan Animated Counter & Mouse Spotlight -->
+        <div
+          x-ref="statsContainer"
+          class="mt-16 lg:mt-24 grid grid-cols-1 sm:grid-cols-3 gap-6"
+        >
+          <template x-for="(stat, index) in stats" :key="stat.id">
+            <div
+              x-init="observeReveal($el, index * 110)"
+              @mousemove="handleSpotlight($event)"
+              class="reveal-up spotlight-card group rounded-2xl border border-slate-200/80 bg-slate-50 p-7 text-center shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:border-sky-400 dark:border-slate-800 dark:bg-slate-950/70 dark:hover:border-sky-600"
+            >
+              <div class="font-heading text-4xl sm:text-5xl font-extrabold text-sky-600 dark:text-sky-400 transition-transform duration-300 group-hover:scale-105">
+                <span x-text="stat.current">0</span><span x-text="stat.suffix"></span>
+              </div>
               <p class="mt-2 text-base font-bold text-slate-800 dark:text-slate-200" x-text="stat.label"></p>
               <p class="mt-1 text-xs text-slate-500 dark:text-slate-400" x-text="stat.sublabel"></p>
             </div>
-          </template> </div> <!-- Alur Pemesanan 4 Langkah -->
+          </template>
+        </div>
+
+        <!-- Alur Pemesanan 4 Langkah -->
         <div class="mt-20 border-t border-slate-100 pt-16 dark:border-slate-800">
-          <div class="text-center max-w-xl mx-auto"> <span
-              class="text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">Cara Kerja Mudah</span>
-            <h3 class="mt-2 font-heading text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white"> 4 Langkah
-              Cucian Beres di Outlet Kami </h3>
+          <div class="text-center max-w-xl mx-auto">
+            <span class="text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">Cara Kerja Mudah</span>
+            <h3 class="mt-2 font-heading text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
+              4 Langkah Cucian Beres di Outlet Kami
+            </h3>
           </div>
-          <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"> <template
-              x-for="(item, idx) in processSteps" :key="item.step">
-              <div x-init="observeReveal($el, idx * 100)" @mousemove="handleSpotlight($event)"
-                class="reveal-up spotlight-card group relative rounded-2xl border border-slate-200/80 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-sky-300 hover:shadow-soft dark:border-slate-800 dark:bg-slate-950/60">
-                <span
-                  class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-sky-600 font-heading text-sm font-extrabold text-white shadow-md shadow-sky-600/20 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3"
-                  x-text="item.step"></span>
-                <h4 class="mt-4 font-heading text-base font-bold text-slate-900 dark:text-white" x-text="item.title">
-                </h4>
-                <p class="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed"
-                  x-text="item.description"></p>
+
+          <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <template x-for="(item, idx) in processSteps" :key="item.step">
+              <div
+                x-init="observeReveal($el, idx * 100)"
+                @mousemove="handleSpotlight($event)"
+                class="reveal-up spotlight-card group relative rounded-2xl border border-slate-200/80 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-sky-300 hover:shadow-soft dark:border-slate-800 dark:bg-slate-950/60"
+              >
+                <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-sky-600 font-heading text-sm font-extrabold text-white shadow-md shadow-sky-600/20 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3" x-text="item.step"></span>
+                <h4 class="mt-4 font-heading text-base font-bold text-slate-900 dark:text-white" x-text="item.title"></h4>
+                <p class="mt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed" x-text="item.description"></p>
               </div>
-            </template> </div>
+            </template>
+          </div>
         </div>
       </div>
-    </section> <!-- ==================================================================== -->
+    </section>
+
+    <!-- ==================================================================== -->
     <!-- 3. SERVICES SECTION (TAB FILTER + PENCARIAN + SPOTLIGHT CARDS)       -->
     <!-- ==================================================================== -->
-    <section id="services"
-      class="py-20 lg:py-28 bg-slate-50 bg-dot-pattern dark:bg-slate-950 transition-colors duration-300">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"> <!-- Section Header -->
-        <div x-init="observeReveal($el, 0)" class="reveal-up mx-auto max-w-2xl text-center"> <span
-            class="inline-block rounded-lg bg-sky-100 px-3 py-1 text-xs font-bold uppercase tracking-wider text-sky-700 dark:bg-sky-950 dark:text-sky-400">
-            Daftar Layanan </span>
-          <h2
-            class="mt-3 font-heading text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-            Pilihan Layanan Sesuai Kebutuhan Anda </h2>
-          <p class="mt-3 text-base text-slate-600 dark:text-slate-400"> Pilih kategori layanan atau ketik kata kunci di
-            bawah untuk mengecek tarif dan estimasi pengerjaan. </p>
-        </div> <!-- Tab Filter Kategori & Search Bar -->
-        <div class="mt-10 flex flex-col md:flex-row items-center justify-between gap-4"> <!-- Tabs -->
-          <div class="flex flex-wrap items-center justify-center gap-2"> <template x-for="cat in categories"
-              :key="cat.id"> <button type="button" @click="activeCategory = cat.id; serviceSearch = ''"
-                :class="activeCategory === cat.id && serviceSearch.trim() === '' ? 'bg-sky-600 text-white shadow-md shadow-sky-600/25 border-sky-600 scale-[1.02]' : 'bg-white text-slate-600 border-slate-200 hover:border-sky-300 hover:text-sky-600 dark:bg-slate-900 dark:text-slate-300 dark:border-slate-800 dark:hover:border-sky-700 dark:hover:text-sky-400'"
+    <section id="services" class="py-20 lg:py-28 bg-slate-50 bg-dot-pattern dark:bg-slate-950 transition-colors duration-300">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div x-init="observeReveal($el, 0)" class="reveal-up mx-auto max-w-2xl text-center">
+          <span class="inline-block rounded-lg bg-sky-100 px-3 py-1 text-xs font-bold uppercase tracking-wider text-sky-700 dark:bg-sky-950 dark:text-sky-400">
+            Daftar Layanan
+          </span>
+          <h2 class="mt-3 font-heading text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+            Pilihan Layanan Sesuai Kebutuhan Anda
+          </h2>
+          <p class="mt-3 text-base text-slate-600 dark:text-slate-400">
+            Pilih kategori layanan atau ketik kata kunci di bawah untuk mengecek tarif dan estimasi pengerjaan.
+          </p>
+        </div>
+
+        <!-- Tab Filter Kategori & Search Bar -->
+        <div class="mt-10 flex flex-col md:flex-row items-center justify-between gap-4">
+          <!-- Tabs -->
+          <div class="flex flex-wrap items-center justify-center gap-2">
+            <template x-for="cat in categories" :key="cat.id">
+              <button
+                type="button"
+                @click="activeCategory = cat.id; serviceSearch = ''"
+                :class="activeCategory === cat.id && serviceSearch.trim() === ''
+                  ? 'bg-sky-600 text-white shadow-md shadow-sky-600/25 border-sky-600 scale-[1.02]'
+                  : 'bg-white text-slate-600 border-slate-200 hover:border-sky-300 hover:text-sky-600 dark:bg-slate-900 dark:text-slate-300 dark:border-slate-800 dark:hover:border-sky-700 dark:hover:text-sky-400'"
                 class="rounded-xl border px-4 py-2.5 text-sm font-semibold transition-all duration-200 focus:outline-none"
-                x-text="cat.name"></button> </template> </div> <!-- Search Input -->
-          <div class="relative w-full md:w-72"> <input type="text" x-model="serviceSearch"
-              placeholder="Cari layanan (mis. Bedcover, 6 Jam)..." aria-label="Cari layanan laundry"
-              class="w-full rounded-xl border border-slate-200 bg-white py-2.5 pl-10 pr-8 text-sm text-slate-800 shadow-sm transition focus:border-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-500/20 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-100" />
-            <svg xmlns="http://www.w3.org/2000/svg"
-              class="pointer-events-none absolute left-3.5 top-3 h-4 w-4 text-slate-400" fill="none" viewBox="0 0 24 24"
-              stroke="currentColor" stroke-width="2">
+                x-text="cat.name"
+              ></button>
+            </template>
+          </div>
+
+          <!-- Search Input -->
+          <div class="relative w-full md:w-72">
+            <input
+              type="text"
+              x-model="serviceSearch"
+              placeholder="Cari layanan (mis. Bedcover, 6 Jam)..."
+              aria-label="Cari layanan laundry"
+              class="w-full rounded-xl border border-slate-200 bg-white py-2.5 pl-10 pr-8 text-sm text-slate-800 shadow-sm transition focus:border-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-500/20 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-100"
+            />
+            <svg xmlns="http://www.w3.org/2000/svg" class="pointer-events-none absolute left-3.5 top-3 h-4 w-4 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <circle cx="11" cy="11" r="8" />
               <line x1="21" y1="21" x2="16.65" y2="16.65" />
-            </svg> <button x-cloak x-show="serviceSearch.trim() !== ''" type="button" @click="serviceSearch = ''"
+            </svg>
+            <button
+              x-cloak
+              x-show="serviceSearch.trim() !== ''"
+              type="button"
+              @click="serviceSearch = ''"
               aria-label="Hapus pencarian"
-              class="absolute right-2.5 top-2.5 text-xs font-bold text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
-              ✕ </button> </div>
-        </div> <!-- Empty State saat Pencarian Tidak Ditemukan -->
-        <div x-cloak x-show="filteredServices.length === 0"
-          class="mt-10 rounded-2xl border border-dashed border-slate-300 bg-white p-10 text-center dark:border-slate-800 dark:bg-slate-900">
+              class="absolute right-2.5 top-2.5 text-xs font-bold text-slate-400 hover:text-slate-600 dark:hover:text-slate-200"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+
+        <!-- Empty State saat Pencarian Tidak Ditemukan -->
+        <div x-cloak x-show="filteredServices.length === 0" class="mt-10 rounded-2xl border border-dashed border-slate-300 bg-white p-10 text-center dark:border-slate-800 dark:bg-slate-900">
           <p class="text-base font-bold text-slate-800 dark:text-slate-200">Layanan tidak ditemukan</p>
-          <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Coba kata kunci lain atau pilih salah satu tab
-            kategori di atas.</p> <button type="button" @click="serviceSearch = ''"
-            class="mt-4 rounded-xl bg-sky-600 px-4 py-2 text-xs font-semibold text-white hover:bg-sky-700"> Reset
-            Pencarian </button>
-        </div> <!-- Grid Kartu Layanan dengan Interactive Spotlight -->
+          <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Coba kata kunci lain atau pilih salah satu tab kategori di atas.</p>
+          <button
+            type="button"
+            @click="serviceSearch = ''"
+            class="mt-4 rounded-xl bg-sky-600 px-4 py-2 text-xs font-semibold text-white hover:bg-sky-700"
+          >
+            Reset Pencarian
+          </button>
+        </div>
+
+        <!-- Grid Kartu Layanan dengan Interactive Spotlight -->
         <div x-show="filteredServices.length > 0" class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <template x-for="service in filteredServices" :key="service.id">
-            <article @mousemove="handleSpotlight($event)"
-              class="spotlight-card group relative flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white/95 p-6 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-sky-400 hover:shadow-soft dark:border-slate-800 dark:bg-slate-900/95 dark:hover:border-sky-600">
-              <div> <!-- Top Badges -->
-                <div class="flex items-center justify-between gap-2 mb-3"> <span
-                    class="inline-flex items-center gap-1.5 rounded-full bg-sky-50 px-2.5 py-1 text-xs font-semibold text-sky-700 dark:bg-sky-950/90 dark:text-sky-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24"
-                      stroke="currentColor" stroke-width="2">
+            <article
+              @mousemove="handleSpotlight($event)"
+              class="spotlight-card group relative flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white/95 p-6 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-sky-400 hover:shadow-soft dark:border-slate-800 dark:bg-slate-900/95 dark:hover:border-sky-600"
+            >
+              <div>
+                <!-- Top Badges -->
+                <div class="flex items-center justify-between gap-2 mb-3">
+                  <span class="inline-flex items-center gap-1.5 rounded-full bg-sky-50 px-2.5 py-1 text-xs font-semibold text-sky-700 dark:bg-sky-950/90 dark:text-sky-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                       <circle cx="12" cy="12" r="10" />
                       <polyline points="12 6 12 12 16 14" />
-                    </svg> <span x-text="service.duration"></span> </span> <span x-cloak x-show="service.badge"
+                    </svg>
+                    <span x-text="service.duration"></span>
+                  </span>
+
+                  <span
+                    x-cloak
+                    x-show="service.badge"
                     x-text="service.badge"
-                    class="inline-flex items-center rounded-full bg-amber-100 px-2.5 py-0.5 text-[11px] font-bold text-amber-800 dark:bg-amber-950/80 dark:text-amber-300"></span>
+                    class="inline-flex items-center rounded-full bg-amber-100 px-2.5 py-0.5 text-[11px] font-bold text-amber-800 dark:bg-amber-950/80 dark:text-amber-300"
+                  ></span>
                 </div>
-                <h3
-                  class="font-heading text-lg font-bold text-slate-900 group-hover:text-sky-600 dark:text-white dark:group-hover:text-sky-400 transition-colors"
-                  x-text="service.name"></h3>
-                <p class="mt-2.5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed"
-                  x-text="service.description"></p>
+
+                <h3 class="font-heading text-lg font-bold text-slate-900 group-hover:text-sky-600 dark:text-white dark:group-hover:text-sky-400 transition-colors" x-text="service.name"></h3>
+
+                <p class="mt-2.5 text-sm text-slate-600 dark:text-slate-400 leading-relaxed" x-text="service.description"></p>
               </div>
+
               <div class="mt-6 flex items-center justify-between border-t border-slate-100 pt-4 dark:border-slate-800">
-                <div> <span class="font-heading text-xl font-extrabold text-sky-600 dark:text-sky-400"
-                    x-text="formatRupiah(service.price)"></span> <span
-                    class="text-xs font-medium text-slate-500 dark:text-slate-400" x-text="'/' + service.unit"></span>
-                </div> <button type="button" @click="selectServiceForCalculator(service.id)"
-                  class="inline-flex items-center gap-1.5 rounded-xl bg-slate-100 px-3.5 py-2 text-xs font-semibold text-slate-700 transition-all duration-200 hover:bg-sky-600 hover:text-white dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-sky-600 dark:hover:text-white">
-                  <span>Hitung</span> <svg xmlns="http://www.w3.org/2000/svg"
-                    class="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" fill="none"
-                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                <div>
+                  <span class="font-heading text-xl font-extrabold text-sky-600 dark:text-sky-400" x-text="formatRupiah(service.price)"></span>
+                  <span class="text-xs font-medium text-slate-500 dark:text-slate-400" x-text="'/' + service.unit"></span>
+                </div>
+
+                <button
+                  type="button"
+                  @click="selectServiceForCalculator(service.id)"
+                  class="inline-flex items-center gap-1.5 rounded-xl bg-slate-100 px-3.5 py-2 text-xs font-semibold text-slate-700 transition-all duration-200 hover:bg-sky-600 hover:text-white dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-sky-600 dark:hover:text-white"
+                >
+                  <span>Hitung</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                  </svg> </button>
+                  </svg>
+                </button>
               </div>
             </article>
-          </template> </div>
+          </template>
+        </div>
       </div>
-    </section> <!-- ==================================================================== -->
+    </section>
+
+    <!-- ==================================================================== -->
     <!-- 4. KALKULATOR ESTIMASI HARGA MULTI-LAYANAN + QUICK BUNDLES           -->
     <!-- ==================================================================== -->
     <section id="check-price" class="py-20 lg:py-28 bg-white dark:bg-slate-900 transition-colors duration-300">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"> <!-- Section Header -->
-        <div x-init="observeReveal($el, 0)" class="reveal-up mx-auto max-w-2xl text-center"> <span
-            class="inline-block rounded-lg bg-sky-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-sky-600 dark:bg-sky-950 dark:text-sky-400">
-            Simulasi Biaya Interaktif </span>
-          <h2
-            class="mt-3 font-heading text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-            Kalkulator Estimasi Harga Laundry </h2>
-          <p class="mt-3 text-base text-slate-600 dark:text-slate-400"> Gabungkan beberapa layanan sekaligus, pilih
-            aroma parfum, dan kirim rincian pesanan ke WhatsApp sebelum datang ke outlet kami. </p>
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <!-- Section Header -->
+        <div x-init="observeReveal($el, 0)" class="reveal-up mx-auto max-w-2xl text-center">
+          <span class="inline-block rounded-lg bg-sky-50 px-3 py-1 text-xs font-bold uppercase tracking-wider text-sky-600 dark:bg-sky-950 dark:text-sky-400">
+            Simulasi Biaya Interaktif
+          </span>
+          <h2 class="mt-3 font-heading text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+            Kalkulator Estimasi Harga Laundry
+          </h2>
+          <p class="mt-3 text-base text-slate-600 dark:text-slate-400">
+            Gabungkan beberapa layanan sekaligus, pilih aroma parfum, dan kirim rincian pesanan ke WhatsApp sebelum datang ke outlet kami.
+          </p>
+
           <!-- Quick Simulasi 1-Klik -->
-          <div class="mt-6 flex flex-wrap items-center justify-center gap-2"> <span
-              class="text-xs font-semibold text-slate-400">Coba Simulasi Cepat:</span> <template
-              x-for="(bundle, bIdx) in quickBundles" :key="bIdx"> <button type="button"
+          <div class="mt-6 flex flex-wrap items-center justify-center gap-2">
+            <span class="text-xs font-semibold text-slate-400">Coba Simulasi Cepat:</span>
+            <template x-for="(bundle, bIdx) in quickBundles" :key="bIdx">
+              <button
+                type="button"
                 @click="applyQuickBundle(bundle)"
                 class="rounded-full border border-sky-200 bg-sky-50/80 px-3.5 py-1.5 text-xs font-semibold text-sky-700 transition hover:bg-sky-600 hover:text-white hover:border-sky-600 dark:border-sky-800 dark:bg-sky-950/60 dark:text-sky-300 dark:hover:bg-sky-600 dark:hover:text-white"
-                x-text="bundle.label"></button> </template> </div>
-        </div> <!-- Calculator Container -->
+                x-text="bundle.label"
+              ></button>
+            </template>
+          </div>
+        </div>
+
+        <!-- Calculator Container -->
         <div class="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           <!-- Form Pemilihan Layanan (Kiri - 7 Kolom) -->
-          <div
-            class="lg:col-span-7 rounded-3xl border border-slate-200 bg-slate-50 p-6 sm:p-8 shadow-soft dark:border-slate-800 dark:bg-slate-950">
-            <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white"> 1. Tambah Layanan ke Daftar
-              Estimasi </h3>
-            <p class="mt-1 text-sm text-slate-500 dark:text-slate-400"> Anda bisa menggabungkan layanan kiloan, express,
-              dan satuan dalam satu nota. </p>
+          <div class="lg:col-span-7 rounded-3xl border border-slate-200 bg-slate-50 p-6 sm:p-8 shadow-soft dark:border-slate-800 dark:bg-slate-950">
+            <h3 class="font-heading text-xl font-bold text-slate-900 dark:text-white">
+              1. Tambah Layanan ke Daftar Estimasi
+            </h3>
+            <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">
+              Anda bisa menggabungkan layanan kiloan, express, dan satuan dalam satu nota.
+            </p>
+
             <form @submit.prevent="addToCart()" class="mt-6 space-y-5">
               <!-- Dropdown Layanan Dikelompokkan dengan Optgroup -->
-              <div> <label for="service-select"
-                  class="block text-sm font-semibold text-slate-700 dark:text-slate-200 mb-2"> Jenis Layanan </label>
-                <select id="service-select" x-model="selectedServiceId"
-                  class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3.5 text-sm font-medium text-slate-800 shadow-sm transition focus:border-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-500/25 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100">
+              <div>
+                <label for="service-select" class="block text-sm font-semibold text-slate-700 dark:text-slate-200 mb-2">
+                  Jenis Layanan
+                </label>
+                <select
+                  id="service-select"
+                  x-model="selectedServiceId"
+                  class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3.5 text-sm font-medium text-slate-800 shadow-sm transition focus:border-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-500/25 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
+                >
                   <template x-for="cat in categories" :key="cat.id">
-                    <optgroup :label="cat.name"> <template x-for="srv in servicesByCategory(cat.id)" :key="srv.id">
-                        <option :value="srv.id" x-text="`${srv.name} — ${formatRupiah(srv.price)}/${srv.unit}`">
-                        </option>
+                    <optgroup :label="cat.name">
+                      <template x-for="srv in servicesByCategory(cat.id)" :key="srv.id">
+                        <option
+                          :value="srv.id"
+                          x-text="`${srv.name} — ${formatRupiah(srv.price)}/${srv.unit}`"
+                        ></option>
                       </template>
                     </optgroup>
                   </template>
@@ -571,18 +777,28 @@
                     <span x-text="dynamicQtyLabel">Berat (kg)</span>
                   </label>
                   <div class="relative">
-                    <input id="service-qty" type="number" x-model="inputQty" min="0.5" step="0.5" required
+                    <input
+                      id="service-qty"
+                      type="number"
+                      x-model="inputQty"
+                      min="0.5"
+                      step="0.5"
+                      required
                       placeholder="Contoh: 2.5"
-                      class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3.5 pr-14 text-sm font-semibold text-slate-900 shadow-sm transition focus:border-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-500/25 dark:border-slate-700 dark:bg-slate-900 dark:text-white" />
+                      class="w-full rounded-xl border border-slate-300 bg-white px-4 py-3.5 pr-14 text-sm font-semibold text-slate-900 shadow-sm transition focus:border-sky-600 focus:outline-none focus:ring-2 focus:ring-sky-500/25 dark:border-slate-700 dark:bg-slate-900 dark:text-white"
+                    />
                     <span
                       class="pointer-events-none absolute inset-y-0 right-4 flex items-center text-xs font-bold uppercase text-slate-400"
-                      x-text="selectedService ? selectedService.unit : 'kg'"></span>
+                      x-text="selectedService ? selectedService.unit : 'kg'"
+                    ></span>
                   </div>
                 </div>
 
                 <div class="sm:col-span-5">
-                  <button type="submit"
-                    class="btn-shimmer flex w-full items-center justify-center gap-2 rounded-xl bg-sky-600 px-5 py-3.5 text-sm font-bold text-white shadow-md shadow-sky-600/25 transition hover:bg-sky-700 active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 dark:focus:ring-offset-slate-950">
+                  <button
+                    type="submit"
+                    class="btn-shimmer flex w-full items-center justify-center gap-2 rounded-xl bg-sky-600 px-5 py-3.5 text-sm font-bold text-white shadow-md shadow-sky-600/25 transition hover:bg-sky-700 active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 dark:focus:ring-offset-slate-950"
+                  >
                     <span class="text-base leading-none">+</span>
                     <span>Tambah</span>
                   </button>
@@ -590,9 +806,14 @@
               </div>
 
               <!-- Notifikasi Aksi Singkat -->
-              <div x-cloak x-show="calculatorFeedback" x-transition:enter="transition ease-out duration-200"
-                x-transition:enter-start="opacity-0 -translate-y-1" x-transition:enter-end="opacity-100 translate-y-0"
-                class="rounded-xl bg-sky-100/90 px-4 py-2.5 text-xs font-semibold text-sky-800 dark:bg-sky-950 dark:text-sky-300">
+              <div
+                x-cloak
+                x-show="calculatorFeedback"
+                x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 -translate-y-1"
+                x-transition:enter-end="opacity-100 translate-y-0"
+                class="rounded-xl bg-sky-100/90 px-4 py-2.5 text-xs font-semibold text-sky-800 dark:bg-sky-950 dark:text-sky-300"
+              >
                 <span x-text="calculatorFeedback"></span>
               </div>
             </form>
@@ -606,12 +827,14 @@
               <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <!-- Pilihan Parfum -->
                 <div>
-                  <label for="parfum-select"
-                    class="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1.5">
+                  <label for="parfum-select" class="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1.5">
                     Aroma Parfum (Gratis)
                   </label>
-                  <select id="parfum-select" x-model="selectedParfum"
-                    class="w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-xs sm:text-sm font-medium text-slate-800 focus:border-sky-600 focus:outline-none dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100">
+                  <select
+                    id="parfum-select"
+                    x-model="selectedParfum"
+                    class="w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-xs sm:text-sm font-medium text-slate-800 focus:border-sky-600 focus:outline-none dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
+                  >
                     <template x-for="parfum in parfumOptions" :key="parfum">
                       <option :value="parfum" x-text="parfum"></option>
                     </template>
@@ -623,25 +846,27 @@
                   <label for="order-note" class="block text-xs font-semibold text-slate-600 dark:text-slate-300 mb-1.5">
                     Catatan Khusus (Opsional)
                   </label>
-                  <input id="order-note" type="text" x-model="orderNote" placeholder="Mis. Pisahkan baju putih..."
-                    class="w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-xs sm:text-sm text-slate-800 focus:border-sky-600 focus:outline-none dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100" />
+                  <input
+                    id="order-note"
+                    type="text"
+                    x-model="orderNote"
+                    placeholder="Mis. Pisahkan baju putih..."
+                    class="w-full rounded-xl border border-slate-300 bg-white px-3.5 py-2.5 text-xs sm:text-sm text-slate-800 focus:border-sky-600 focus:outline-none dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
+                  />
                 </div>
               </div>
             </div>
 
             <!-- Info Tambahan -->
-            <div
-              class="mt-6 rounded-2xl border border-sky-200/70 bg-sky-50/70 p-4 dark:border-sky-900/50 dark:bg-sky-950/30">
+            <div class="mt-6 rounded-2xl border border-sky-200/70 bg-sky-50/70 p-4 dark:border-sky-900/50 dark:bg-sky-950/30">
               <p class="text-xs sm:text-sm text-sky-900 dark:text-sky-200 leading-relaxed">
-                <strong>Catatan:</strong> Berat aktual layanan kiloan akan ditimbang ulang menggunakan timbangan digital
-                langsung di meja kasir outlet di depan Anda.
+                <strong>Catatan:</strong> Berat aktual layanan kiloan akan ditimbang ulang menggunakan timbangan digital langsung di meja kasir outlet di depan Anda.
               </p>
             </div>
           </div>
 
           <!-- Ringkasan Keranjang Estimasi (Kanan - 5 Kolom) -->
-          <div
-            class="lg:col-span-5 lg:sticky lg:top-28 rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 shadow-xl dark:border-slate-800 dark:bg-slate-950">
+          <div class="lg:col-span-5 lg:sticky lg:top-28 rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 shadow-xl dark:border-slate-800 dark:bg-slate-950">
             <div class="flex items-center justify-between border-b border-slate-100 pb-4 dark:border-slate-800">
               <div>
                 <h3 class="font-heading text-lg font-bold text-slate-900 dark:text-white">
@@ -650,20 +875,22 @@
                 <p class="text-xs text-slate-500 dark:text-slate-400" x-text="cart.length + ' layanan dipilih'"></p>
               </div>
 
-              <button x-cloak x-show="cart.length > 0" type="button" @click="clearCart()"
-                class="text-xs font-semibold text-rose-600 hover:text-rose-700 dark:text-rose-400 dark:hover:text-rose-300">
+              <button
+                x-cloak
+                x-show="cart.length > 0"
+                type="button"
+                @click="clearCart()"
+                class="text-xs font-semibold text-rose-600 hover:text-rose-700 dark:text-rose-400 dark:hover:text-rose-300"
+              >
                 Kosongkan
               </button>
             </div>
 
             <!-- Empty State -->
             <div x-show="cart.length === 0" class="py-12 text-center">
-              <div
-                class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-100 text-slate-400 dark:bg-slate-900 dark:text-slate-600">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24"
-                  stroke="currentColor" stroke-width="1.8">
-                  <path stroke-linecap="round" stroke-linejoin="round"
-                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+              <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-slate-100 text-slate-400 dark:bg-slate-900 dark:text-slate-600">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                 </svg>
               </div>
               <p class="mt-3 text-sm font-semibold text-slate-700 dark:text-slate-300">Belum ada layanan dipilih</p>
@@ -673,34 +900,43 @@
             </div>
 
             <!-- List Item Cart dengan Stepper +/- -->
-            <ul x-cloak x-show="cart.length > 0"
-              class="custom-scrollbar mt-4 divide-y divide-slate-100 dark:divide-slate-800 max-h-80 overflow-y-auto pr-1">
+            <ul x-cloak x-show="cart.length > 0" class="custom-scrollbar mt-4 divide-y divide-slate-100 dark:divide-slate-800 max-h-80 overflow-y-auto pr-1">
               <template x-for="item in cart" :key="item.id">
                 <li class="py-3.5 flex items-center justify-between gap-3 transition-all duration-200">
                   <div class="min-w-0 flex-1">
                     <p class="text-sm font-bold text-slate-900 dark:text-white truncate" x-text="item.name"></p>
                     <p class="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
-                      <span x-text="`${item.qty}${item.unit}`"></span>
+                      <span x-text="`${item.qty} ${item.unit}`"></span>
                       <span> × </span>
                       <span x-text="formatRupiah(item.price)"></span>
                     </p>
 
                     <!-- Stepper +/- Kuantitas -->
-                    <div
-                      class="mt-2 inline-flex items-center rounded-lg border border-slate-200 bg-slate-50 dark:border-slate-700 dark:bg-slate-900">
-                      <button type="button" @click="decrementItem(item.id)" aria-label="Kurangi jumlah"
-                        class="px-2.5 py-0.5 text-xs font-bold text-slate-600 hover:text-sky-600 dark:text-slate-300">−</button>
+                    <div class="mt-2 inline-flex items-center rounded-lg border border-slate-200 bg-slate-50 dark:border-slate-700 dark:bg-slate-900">
+                      <button
+                        type="button"
+                        @click="decrementItem(item.id)"
+                        aria-label="Kurangi jumlah"
+                        class="px-2.5 py-0.5 text-xs font-bold text-slate-600 hover:text-sky-600 dark:text-slate-300"
+                      >−</button>
                       <span class="px-2 text-xs font-bold text-slate-800 dark:text-slate-100" x-text="item.qty"></span>
-                      <button type="button" @click="incrementItem(item.id)" aria-label="Tambah jumlah"
-                        class="px-2.5 py-0.5 text-xs font-bold text-slate-600 hover:text-sky-600 dark:text-slate-300">+</button>
+                      <button
+                        type="button"
+                        @click="incrementItem(item.id)"
+                        aria-label="Tambah jumlah"
+                        class="px-2.5 py-0.5 text-xs font-bold text-slate-600 hover:text-sky-600 dark:text-slate-300"
+                      >+</button>
                     </div>
                   </div>
 
                   <div class="flex items-center gap-2.5 shrink-0">
-                    <span class="text-sm font-bold text-slate-800 dark:text-slate-200"
-                      x-text="formatRupiah(item.price * item.qty)"></span>
-                    <button type="button" @click="removeFromCart(item.id)" :aria-label="'Hapus ' + item.name"
-                      class="flex h-7 w-7 items-center justify-center rounded-lg bg-slate-100 text-xs font-bold text-slate-500 transition hover:bg-rose-100 hover:text-rose-600 dark:bg-slate-800 dark:text-slate-400 dark:hover:bg-rose-950 dark:hover:text-rose-400">
+                    <span class="text-sm font-bold text-slate-800 dark:text-slate-200" x-text="formatRupiah(item.price * item.qty)"></span>
+                    <button
+                      type="button"
+                      @click="removeFromCart(item.id)"
+                      :aria-label="'Hapus ' + item.name"
+                      class="flex h-7 w-7 items-center justify-center rounded-lg bg-slate-100 text-xs font-bold text-slate-500 transition hover:bg-rose-100 hover:text-rose-600 dark:bg-slate-800 dark:text-slate-400 dark:hover:bg-rose-950 dark:hover:text-rose-400"
+                    >
                       ✕
                     </button>
                   </div>
@@ -709,11 +945,9 @@
             </ul>
 
             <!-- Total Estimasi Real-time dengan Pulse Highlight -->
-            <div
-              class="mt-6 rounded-2xl bg-gradient-to-br from-slate-50 to-sky-50/60 p-4 border border-sky-200/70 dark:from-slate-900 dark:to-sky-950/30 dark:border-slate-800">
+            <div class="mt-6 rounded-2xl bg-gradient-to-br from-slate-50 to-sky-50/60 p-4 border border-sky-200/70 dark:from-slate-900 dark:to-sky-950/30 dark:border-slate-800">
               <div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 mb-2">
-                <span>Parfum: <strong class="text-slate-700 dark:text-slate-200"
-                    x-text="selectedParfum.split(' (')[0]"></strong></span>
+                <span>Parfum: <strong class="text-slate-700 dark:text-slate-200" x-text="selectedParfum.split(' (')[0]"></strong></span>
                 <span class="font-medium text-sky-700 dark:text-sky-400">Drop-Off Outlet</span>
               </div>
               <div class="flex items-center justify-between border-t border-slate-200/70 pt-2.5 dark:border-slate-800">
@@ -721,20 +955,25 @@
                 <span
                   :class="pricePulse ? 'scale-110 text-emerald-500 dark:text-emerald-400' : 'scale-100 text-sky-600 dark:text-sky-400'"
                   class="font-heading text-2xl font-extrabold transition-all duration-300"
-                  x-text="formatRupiah(totalEstimate)">Rp 0</span>
+                  x-text="formatRupiah(totalEstimate)"
+                >Rp 0</span>
               </div>
             </div>
 
             <!-- Tombol Kirim & Konfirmasi via WhatsApp -->
             <div class="mt-5">
-              <a :href="whatsappCheckoutUrl" :target="cart.length > 0 ? '_blank' : '_self'" rel="noopener noreferrer"
-                @click="if (cart.length === 0) $event.preventDefault()" :class="cart.length > 0
+              <a
+                :href="whatsappCheckoutUrl"
+                :target="cart.length > 0 ? '_blank' : '_self'"
+                rel="noopener noreferrer"
+                @click="if (cart.length === 0) $event.preventDefault()"
+                :class="cart.length > 0
                   ? 'btn-shimmer bg-emerald-500 hover:bg-emerald-600 text-white shadow-lg shadow-emerald-500/30 hover:-translate-y-0.5 cursor-pointer'
                   : 'bg-slate-200 text-slate-400 dark:bg-slate-800 dark:text-slate-600 cursor-not-allowed'"
-                class="flex w-full items-center justify-center gap-2.5 rounded-2xl px-6 py-4 text-sm sm:text-base font-bold transition-all duration-200">
+                class="flex w-full items-center justify-center gap-2.5 rounded-2xl px-6 py-4 text-sm sm:text-base font-bold transition-all duration-200"
+              >
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current" viewBox="0 0 24 24">
-                  <path
-                    d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.435 5.172L2 22l4.969-1.304A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" />
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.435 5.172L2 22l4.969-1.304A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" />
                 </svg>
                 <span>Konfirmasi Pesanan via WhatsApp</span>
               </a>
@@ -751,12 +990,10 @@
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <!-- Section Header -->
         <div x-init="observeReveal($el, 0)" class="reveal-up mx-auto max-w-2xl text-center">
-          <span
-            class="inline-block rounded-lg bg-sky-100 px-3 py-1 text-xs font-bold uppercase tracking-wider text-sky-700 dark:bg-sky-950 dark:text-sky-400">
+          <span class="inline-block rounded-lg bg-sky-100 px-3 py-1 text-xs font-bold uppercase tracking-wider text-sky-700 dark:bg-sky-950 dark:text-sky-400">
             Testimoni Pelanggan
           </span>
-          <h2
-            class="mt-3 font-heading text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
+          <h2 class="mt-3 font-heading text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
             Dipercaya Warga Tangerang
           </h2>
           <p class="mt-3 text-base text-slate-600 dark:text-slate-400">
@@ -767,23 +1004,23 @@
         <!-- Grid 3 Kolom Ulasan dengan Spotlight -->
         <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
           <template x-for="(item, idx) in testimonials" :key="item.id">
-            <article x-init="observeReveal($el, idx * 110)" @mousemove="handleSpotlight($event)"
-              class="reveal-up spotlight-card flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-sky-300 hover:shadow-soft dark:border-slate-800 dark:bg-slate-900 dark:hover:border-sky-800">
+            <article
+              x-init="observeReveal($el, idx * 110)"
+              @mousemove="handleSpotlight($event)"
+              class="reveal-up spotlight-card flex flex-col justify-between rounded-2xl border border-slate-200/90 bg-white p-7 shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:border-sky-300 hover:shadow-soft dark:border-slate-800 dark:bg-slate-900 dark:hover:border-sky-800"
+            >
               <div>
                 <div class="flex items-center justify-between gap-2">
                   <!-- Ikon 5 Bintang -->
                   <div class="flex items-center gap-1 text-amber-400" aria-label="Rating 5 dari 5 bintang">
                     <template x-for="star in item.rating" :key="star">
                       <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current" viewBox="0 0 20 20">
-                        <path
-                          d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                       </svg>
                     </template>
                   </div>
 
-                  <span
-                    class="rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300"
-                    x-text="item.serviceUsed"></span>
+                  <span class="rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300" x-text="item.serviceUsed"></span>
                 </div>
 
                 <!-- Kutipan Ulasan -->
@@ -794,9 +1031,7 @@
 
               <!-- Identitas Pelanggan -->
               <div class="mt-6 flex items-center gap-3.5 border-t border-slate-100 pt-4 dark:border-slate-800">
-                <div
-                  class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-sky-500 to-sky-700 font-heading text-sm font-extrabold text-white shadow-sm"
-                  x-text="item.initials"></div>
+                <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-sky-500 to-sky-700 font-heading text-sm font-extrabold text-white shadow-sm" x-text="item.initials"></div>
                 <div>
                   <p class="text-sm font-bold text-slate-900 dark:text-white" x-text="item.name"></p>
                   <p class="text-xs text-slate-500 dark:text-slate-400" x-text="item.role"></p>
@@ -809,8 +1044,7 @@
         <!-- FAQ Accordion -->
         <div x-init="observeReveal($el, 80)" class="reveal-up mt-20 mx-auto max-w-3xl">
           <div class="text-center mb-8">
-            <span class="text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">Pertanyaan
-              Umum</span>
+            <span class="text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">Pertanyaan Umum</span>
             <h3 class="mt-2 font-heading text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white">
               Sering Ditanyakan Pelanggan
             </h3>
@@ -818,22 +1052,34 @@
 
           <div class="space-y-3">
             <template x-for="(faq, index) in faqs" :key="index">
-              <div
-                class="overflow-hidden rounded-2xl border border-slate-200 bg-white transition-colors dark:border-slate-800 dark:bg-slate-900">
-                <button type="button" @click="openFaqIndex = (openFaqIndex === index ? null : index)"
+              <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white transition-colors dark:border-slate-800 dark:bg-slate-900">
+                <button
+                  type="button"
+                  @click="openFaqIndex = (openFaqIndex === index ? null : index)"
                   :aria-expanded="openFaqIndex === index"
-                  class="flex w-full items-center justify-between gap-4 px-6 py-4 text-left font-heading text-sm sm:text-base font-bold text-slate-900 transition hover:text-sky-600 dark:text-white dark:hover:text-sky-400">
+                  class="flex w-full items-center justify-between gap-4 px-6 py-4 text-left font-heading text-sm sm:text-base font-bold text-slate-900 transition hover:text-sky-600 dark:text-white dark:hover:text-sky-400"
+                >
                   <span x-text="faq.question"></span>
-                  <svg xmlns="http://www.w3.org/2000/svg"
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
                     :class="openFaqIndex === index ? 'rotate-180 text-sky-600 dark:text-sky-400' : 'text-slate-400'"
-                    class="h-5 w-5 shrink-0 transition-transform duration-300" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor" stroke-width="2">
+                    class="h-5 w-5 shrink-0 transition-transform duration-300"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                   </svg>
                 </button>
-                <div x-cloak x-show="openFaqIndex === index" x-transition:enter="transition ease-out duration-200"
-                  x-transition:enter-start="opacity-0 -translate-y-1" x-transition:enter-end="opacity-100 translate-y-0"
-                  class="border-t border-slate-100 px-6 py-4 text-sm text-slate-600 dark:border-slate-800 dark:text-slate-300 leading-relaxed">
+                <div
+                  x-cloak
+                  x-show="openFaqIndex === index"
+                  x-transition:enter="transition ease-out duration-200"
+                  x-transition:enter-start="opacity-0 -translate-y-1"
+                  x-transition:enter-end="opacity-100 translate-y-0"
+                  class="border-t border-slate-100 px-6 py-4 text-sm text-slate-600 dark:border-slate-800 dark:text-slate-300 leading-relaxed"
+                >
                   <p x-text="faq.answer"></p>
                 </div>
               </div>
@@ -850,30 +1096,24 @@
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
           <!-- Kolom Kiri: Informasi Kontak -->
-          <div x-init="observeReveal($el, 0)"
-            class="reveal-left lg:col-span-5 flex flex-col justify-between rounded-3xl border border-slate-200 bg-slate-50 p-7 sm:p-9 dark:border-slate-800 dark:bg-slate-950">
+          <div x-init="observeReveal($el, 0)" class="reveal-left lg:col-span-5 flex flex-col justify-between rounded-3xl border border-slate-200 bg-slate-50 p-7 sm:p-9 dark:border-slate-800 dark:bg-slate-950">
             <div>
-              <span
-                class="inline-block rounded-lg bg-sky-100 px-3 py-1 text-xs font-bold uppercase tracking-wider text-sky-700 dark:bg-sky-950 dark:text-sky-400">
+              <span class="inline-block rounded-lg bg-sky-100 px-3 py-1 text-xs font-bold uppercase tracking-wider text-sky-700 dark:bg-sky-950 dark:text-sky-400">
                 Kontak &amp; Lokasi
               </span>
               <h2 class="mt-3 font-heading text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">
                 Kunjungi Outlet Permana Laundry
               </h2>
               <p class="mt-3 text-sm sm:text-base text-slate-600 dark:text-slate-400">
-                Bawa langsung cucian Anda ke outlet kami di Kota Tangerang. Lokasi strategis, penimbangan transparan di
-                depan Anda, dan selesai tepat waktu.
+                Bawa langsung cucian Anda ke outlet kami di Kota Tangerang. Lokasi strategis, penimbangan transparan di depan Anda, dan selesai tepat waktu.
               </p>
 
               <div class="mt-8 space-y-5">
                 <!-- Alamat -->
                 <div class="flex items-start gap-4">
-                  <div
-                    class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-100 text-sky-600 dark:bg-sky-950 dark:text-sky-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                      stroke="currentColor" stroke-width="2">
-                      <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-100 text-sky-600 dark:bg-sky-950 dark:text-sky-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                   </div>
@@ -885,28 +1125,21 @@
 
                 <!-- Email -->
                 <div class="flex items-start gap-4">
-                  <div
-                    class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-100 text-sky-600 dark:bg-sky-950 dark:text-sky-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                      stroke="currentColor" stroke-width="2">
-                      <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-100 text-sky-600 dark:bg-sky-950 dark:text-sky-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
                   <div>
                     <p class="text-sm font-bold text-slate-900 dark:text-white">Email</p>
-                    <a :href="'mailto:' + contact.email"
-                      class="mt-0.5 block text-sm text-sky-600 hover:underline dark:text-sky-400"
-                      x-text="contact.email"></a>
+                    <a :href="'mailto:' + contact.email" class="mt-0.5 block text-sm text-sky-600 hover:underline dark:text-sky-400" x-text="contact.email"></a>
                   </div>
                 </div>
 
                 <!-- Jam Operasional -->
                 <div class="flex items-start gap-4">
-                  <div
-                    class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-100 text-sky-600 dark:bg-sky-950 dark:text-sky-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                      stroke="currentColor" stroke-width="2">
+                  <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-100 text-sky-600 dark:bg-sky-950 dark:text-sky-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                       <circle cx="12" cy="12" r="10" />
                       <polyline points="12 6 12 12 16 14" />
                     </svg>
@@ -921,11 +1154,14 @@
 
             <!-- Tombol Chat WhatsApp -->
             <div class="mt-8 pt-6 border-t border-slate-200/80 dark:border-slate-800">
-              <a :href="whatsappDirectUrl" target="_blank" rel="noopener noreferrer"
-                class="btn-shimmer flex w-full items-center justify-center gap-2.5 rounded-2xl bg-emerald-500 px-6 py-4 text-sm sm:text-base font-bold text-white shadow-lg shadow-emerald-500/25 transition hover:bg-emerald-600 hover:-translate-y-0.5">
+              <a
+                :href="whatsappDirectUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn-shimmer flex w-full items-center justify-center gap-2.5 rounded-2xl bg-emerald-500 px-6 py-4 text-sm sm:text-base font-bold text-white shadow-lg shadow-emerald-500/25 transition hover:bg-emerald-600 hover:-translate-y-0.5"
+              >
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 fill-current" viewBox="0 0 24 24">
-                  <path
-                    d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.435 5.172L2 22l4.969-1.304A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" />
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.435 5.172L2 22l4.969-1.304A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" />
                 </svg>
                 <span>Chat WhatsApp (<span x-text="contact.whatsappDisplay"></span>)</span>
               </a>
@@ -933,11 +1169,15 @@
           </div>
 
           <!-- Kolom Kanan: Google Maps Embed Area Tangerang -->
-          <div x-init="observeReveal($el, 120)"
-            class="reveal-right lg:col-span-7 overflow-hidden rounded-3xl border border-slate-200 shadow-lg dark:border-slate-800 min-h-[380px]">
-            <iframe :src="contact.mapsEmbedUrl" title="Lokasi Permana Laundry di Tangerang"
-              class="h-full w-full min-h-[380px] border-0" allowfullscreen="" loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <div x-init="observeReveal($el, 120)" class="reveal-right lg:col-span-7 overflow-hidden rounded-3xl border border-slate-200 shadow-lg dark:border-slate-800 min-h-[380px]">
+            <iframe
+              :src="contact.mapsEmbedUrl"
+              title="Lokasi Permana Laundry di Tangerang"
+              class="h-full w-full min-h-[380px] border-0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </div>
@@ -947,10 +1187,8 @@
   <!-- ====================================================================== -->
   <!-- FOOTER                                                                 -->
   <!-- ====================================================================== -->
-  <footer
-    class="border-t border-slate-200 bg-slate-50 py-8 dark:border-slate-800 dark:bg-slate-950 transition-colors duration-300">
-    <div
-      class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+  <footer class="border-t border-slate-200 bg-slate-50 py-8 dark:border-slate-800 dark:bg-slate-950 transition-colors duration-300">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
       <div class="flex items-center gap-2">
         <span class="font-heading text-base font-extrabold text-slate-900 dark:text-white">
           Permana <span class="text-sky-600 dark:text-sky-400">Laundry</span>
@@ -969,26 +1207,37 @@
   <!-- ====================================================================== -->
   <div class="fixed bottom-6 right-6 z-40 flex items-center gap-3">
     <!-- Back to Top Button -->
-    <button x-cloak x-show="showBackToTop" x-transition:enter="transition ease-out duration-200"
-      x-transition:enter-start="opacity-0 scale-75" x-transition:enter-end="opacity-100 scale-100"
-      x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 scale-100"
-      x-transition:leave-end="opacity-0 scale-75" type="button" @click="scrollToTop()" aria-label="Kembali ke atas"
-      class="flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white/90 text-slate-700 shadow-lg backdrop-blur-md transition hover:-translate-y-1 hover:border-sky-400 hover:text-sky-600 dark:border-slate-700 dark:bg-slate-900/90 dark:text-slate-200 dark:hover:border-sky-500 dark:hover:text-sky-400">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-        stroke-width="2.4">
+    <button
+      x-cloak
+      x-show="showBackToTop"
+      x-transition:enter="transition ease-out duration-200"
+      x-transition:enter-start="opacity-0 scale-75"
+      x-transition:enter-end="opacity-100 scale-100"
+      x-transition:leave="transition ease-in duration-150"
+      x-transition:leave-start="opacity-100 scale-100"
+      x-transition:leave-end="opacity-0 scale-75"
+      type="button"
+      @click="scrollToTop()"
+      aria-label="Kembali ke atas"
+      class="flex h-12 w-12 items-center justify-center rounded-full border border-slate-200 bg-white/90 text-slate-700 shadow-lg backdrop-blur-md transition hover:-translate-y-1 hover:border-sky-400 hover:text-sky-600 dark:border-slate-700 dark:bg-slate-900/90 dark:text-slate-200 dark:hover:border-sky-500 dark:hover:text-sky-400"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.4">
         <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
       </svg>
     </button>
 
     <!-- Floating WhatsApp Button -->
-    <a :href="whatsappDirectUrl" target="_blank" rel="noopener noreferrer"
+    <a
+      :href="whatsappDirectUrl"
+      target="_blank"
+      rel="noopener noreferrer"
       aria-label="Chat WhatsApp dengan Permana Laundry"
-      class="btn-shimmer group flex items-center gap-2.5 rounded-full bg-emerald-500 p-4 sm:px-5 sm:py-3.5 text-white shadow-xl shadow-emerald-500/35 transition-all duration-200 hover:bg-emerald-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 dark:focus:ring-offset-slate-950">
+      class="btn-shimmer group flex items-center gap-2.5 rounded-full bg-emerald-500 p-4 sm:px-5 sm:py-3.5 text-white shadow-xl shadow-emerald-500/35 transition-all duration-200 hover:bg-emerald-600 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 dark:focus:ring-offset-slate-950"
+    >
       <span class="relative flex h-6 w-6 items-center justify-center">
         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-35"></span>
         <svg xmlns="http://www.w3.org/2000/svg" class="relative h-6 w-6 fill-current" viewBox="0 0 24 24">
-          <path
-            d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.435 5.172L2 22l4.969-1.304A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" />
+          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.435 5.172L2 22l4.969-1.304A9.955 9.955 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z" />
         </svg>
       </span>
       <span class="hidden sm:inline text-sm font-bold tracking-wide">Chat WhatsApp</span>
@@ -996,5 +1245,4 @@
   </div>
 
 </body>
-
 </html>
