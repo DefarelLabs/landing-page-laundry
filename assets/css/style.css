@@ -1,0 +1,280 @@
+/* ==========================================================================
+   PERMANA LAUNDRY — CUSTOM STYLES & ANIMATIONS
+   ========================================================================== */
+
+[x-cloak] {
+  display: none !important;
+}
+
+/* Tipografi Heading */
+.font-heading {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* ==========================================================================
+   BACKGROUND PATTERN (SERVICES SECTION)
+   ========================================================================== */
+.bg-dot-pattern {
+  background-image: radial-gradient(rgba(14, 165, 233, 0.16) 1.25px, transparent 1.25px);
+  background-size: 24px 24px;
+}
+
+.dark .bg-dot-pattern {
+  background-image: radial-gradient(rgba(56, 189, 248, 0.1) 1.25px, transparent 1.25px);
+  background-size: 24px 24px;
+}
+
+/* ==========================================================================
+   BUTTON SHIMMER EFFECT
+   ========================================================================== */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(
+    110deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.28) 50%,
+    transparent 80%
+  );
+  transform: skewX(-20deg);
+  transition: left 0.65s ease;
+  pointer-events: none;
+}
+
+.btn-shimmer:hover::after {
+  left: 140%;
+}
+
+/* ==========================================================================
+   INTERACTIVE MOUSE SPOTLIGHT CARD
+   ========================================================================== */
+.spotlight-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.spotlight-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    360px circle at var(--mouse-x, -999px) var(--mouse-y, -999px),
+    rgba(14, 165, 233, 0.12),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.dark .spotlight-card::before {
+  background: radial-gradient(
+    360px circle at var(--mouse-x, -999px) var(--mouse-y, -999px),
+    rgba(56, 189, 248, 0.15),
+    transparent 65%
+  );
+}
+
+.spotlight-card:hover::before {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   HERO SOAP BUBBLES ANIMATION
+   ========================================================================== */
+.bubble {
+  position: absolute;
+  bottom: -40px;
+  border-radius: 9999px;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.55),
+    rgba(56, 189, 248, 0.22) 55%,
+    rgba(255, 255, 255, 0.08) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.35);
+  animation: riseBubble var(--dur, 12s) ease-in infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes riseBubble {
+  0% {
+    transform: translateY(0) translateX(0) scale(0.85);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.75;
+  }
+  50% {
+    transform: translateY(-48vh) translateX(16px) scale(1);
+  }
+  85% {
+    opacity: 0.55;
+  }
+  100% {
+    transform: translateY(-102vh) translateX(-14px) scale(1.12);
+    opacity: 0;
+  }
+}
+
+/* ==========================================================================
+   FLOATING, TWINKLE & WASHING DRUM ANIMATIONS
+   ========================================================================== */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.82) rotate(20deg);
+  }
+}
+
+@keyframes drumSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes waveFlow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50px);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: floatReverse 5.5s ease-in-out infinite;
+}
+
+.animate-twinkle {
+  animation: twinkle 2.6s ease-in-out infinite;
+}
+
+.animate-drum-spin {
+  transform-box: view-box;
+  transform-origin: 50% 50%;
+  animation: drumSpin 4.5s linear infinite;
+}
+
+.animate-wave-flow {
+  animation: waveFlow 3s linear infinite;
+}
+
+/* ==========================================================================
+   INFINITE MARQUEE BAR
+   ========================================================================== */
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 32s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ==========================================================================
+   SCROLL REVEAL TRANSITIONS
+   ========================================================================== */
+.reveal-up,
+.reveal-left,
+.reveal-right,
+.reveal-scale {
+  opacity: 0;
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-up {
+  transform: translateY(24px);
+}
+
+.reveal-left {
+  transform: translateX(-28px);
+}
+
+.reveal-right {
+  transform: translateX(28px);
+}
+
+.reveal-scale {
+  transform: scale(0.94);
+}
+
+.reveal-up.is-visible,
+.reveal-left.is-visible,
+.reveal-right.is-visible,
+.reveal-scale.is-visible {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+/* ==========================================================================
+   CUSTOM SCROLLBAR (KALKULATOR CART)
+   ========================================================================== */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(148, 163, 184, 0.45);
+  border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(14, 165, 233, 0.65);
+}
