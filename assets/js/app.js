@@ -7,14 +7,14 @@
 const PERMANA_CONFIG = {
   contact: {
     businessName: 'Permana Laundry',
-    whatsappNumber: '6281234567890', // Gunakan kode negara 62 tanpa tanda +
-    whatsappDisplay: '0812-3456-7890',
-    email: 'halo@permanalaundry.id',
-    address: 'Jl. Kisamaun No. 45, Sukasari, Kec. Tangerang, Kota Tangerang, Banten 15118',
-    operationalHours: 'Senin – Minggu: 07.00 – 21.00 WIB',
+    whatsappNumber: '6289691502028', // Gunakan kode negara 62 tanpa tanda +
+    whatsappDisplay: '0896-9150-2028',
+    email: 'permanalaundry@gmail.com',
+    address: 'Jl. Pesantren I No.52, RT.002/RW.007, Kreo Selatan, Kec. Larangan, Kota Tangerang, Banten 15156',
+    operationalHours: 'Senin – Minggu: 11.00 – 00.00 WIB',
     serviceModeLabel: 'Drop-Off & Ambil di Outlet',
     mapsEmbedUrl:
-      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63465.83310018082!2d106.5960987!3d-6.1783061!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f8e853d2e38d%3A0x301576d14feb9c0!2sTangerang%2C%20Tangerang%20City%2C%20Banten!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid',
+      'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7932.360550585235!2d106.73899692207634!3d-6.239955600911147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f101d108bbef%3A0xebab601b5e57cbb4!2sPermana%20Laundry!5e0!3m2!1sid!2sid!4v1795077276826!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin',
   },
 
   categories: [
